@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="cn-ch">
+    <head>
+        <title>2班作业汇总</title>
+        <meta name="author" content="World">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            
+/* 顶栏 */
+.top {
+    background-color: rgb(99, 99, 138);
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* 顶栏文本 */
+.top_text{
+    color: rgb(245, 222, 222);
+    font-size: 35px;
+
+    position:absolute;
+
+    left: 5px;
+
+}
+
+/* 作业窗口 */
+/*#wf{*/
+/*    width: 100vw;*/
+/*    height: calc(100vh - 50px);*/
+/*    position: absolute;*/
+/*    top: 50px;*/
+/*    left: 0;*/
+/*    */
+/*    border: 0;*/
+/*}*/
+
+/* 作业类 */
+.text{
+    background-color: rgb(145, 145, 145);
+    
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+.text:first-of-type{
+    margin-top: 60px;
+}
+
+/* 类标题 */
+.text_title{
+    color:rgb(240, 248, 255);
+    background-color: rgb(66, 66, 66);
+    padding: 5px;
+    padding-left: 10px;
+
+    font-size: 25px;
+}
+
+/* 类内容 */
+.text_info_each{
+    border-color: black;
+    
+    padding: 3px 3px 3px 10px;
+
+    border-top: 1px solid;
+
+    white-space: pre-line;
+
+    overflow: auto;
+}
+
+.text_info_each::before{
+    content:"· ";
+}
+
+/* 提示 */
+.notice{
+    float:right;
+    font-size: 0.6em;
+    white-space: nowrap;
+}
+
+/* 截止 */
+.deadline{
+    float: right;
+    color: #3fbce6;
+    /*color: #20db61;*/
+    white-space: nowrap;
+
+    background-color: rgb(114, 114, 119);
+    border-radius: 5px;
+    font-size: 0.8em;
+    padding: 0.2em;
+    margin-bottom: -0.05em;
+}
+
+/* .deadline::after{
+    content: "截止";
+} */
+
+/* .deadline:empty{
+    color:#ff3e0e
+} */
+
+/* .deadline:empty::before{
+    content: "已";
+} */
+
+/* 重要 */
+.notice[important='1']{
+    color: #ff8222;
+}
+
+button{
+    font-size: 20px;
+}
+
+a{
+    background-color: rgb(228, 234, 239);
+    border-radius: 5px;
+    font-size: 0.8em;
+    padding: 0.2em;
+
+    color: #035a85;
+}
+
+.sort_time{
+    position: relative;
+    border-radius: 5px;
+    float: right;
+
+    color: #424060;
+    font-size: 20px;
+    height: 30px;
+}
+
+.sort_time.top{
+    width: 350px;
+
+    background-color: rgb(114, 114, 119);
+    
+    left: -10px;
+    top: 5px;
+
+    padding: 5px 10px;
+}
+
+/* 新按钮 */
+.fold_dis{
+    background-color: rgb(228, 231, 233);
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+    margin-right: 5px;
+
+    border-radius: 3px;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease 0s;
+}
+
+.fold_dis[unfold='1']{
+    background-color: #727d84;
+
+    margin-right: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+    width: auto;
+
+    display: block;
+
+    padding: 10px;
+}
+
+.fold_dis:hover{
+    background-color: #95a5aa;
+
+}
+
+.fold_dis[unfold='0']{
+    user-select: none;
+}
+
+
+/*彩蛋*/
+/* #video_joke{
+    position: relative;
+
+    top: -156px;
+    left: 160px;
+
+    margin-bottom: -160px;
+
+    height: 164px;
+    width: 292px;
+} */
+
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <div class="top_text">作业汇总<span class="notice" virsion = '1'>v_0.11</span></div>
+            <div class="sort_time top">
+                时间
+                <span class="sort_time" style="background-color: #3fbce6;padding-left: 10px;">
+                    特殊
+                    <span class="sort_time" style="background-color: #20db61;padding-left: 50px;">
+                        充裕
+                        <span class="sort_time" style="background-color: #ff8222;padding-left: 20px;">
+                            剩2-3天
+                            <span class="sort_time" style="background-color: #ff3e0e;padding-left: 5px;">
+                                截止日
+                            </span>
+                        </span>
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="text">
+                <div class="text_title">程序设计JAVA</div>
+                <div class="text_info">
+                    <div class="text_info_each">第9章_预习阅读教材，学习课程派发布的任务</div>
+                    <div class="text_info_each" hidden>复习前8章，将进行课堂测试<span class="deadline">4/7</span></div>
+                    <div class="text_info_each">课堂派_类和对象-实验四作业<span class="deadline">4/20</span>
+                     · 课堂派_课外作业1-Java基础语法作业<span class="deadline">4/20</span></div>
+                </div>
+            </div>
+
+            <div class="text">
+                <div class="text_title">数学</div>
+                <div class="text_info">
+                    <div class="text_info_each">练习册_学到哪做到哪</div>
+                    <div class="text_info_each" hidden>练习册_章末<span class="deadline">4/8</span></div>
+                </div>
+            </div>
+
+            <div class="text" hidden>
+                <div class="text_title">线性代数</div>
+                <div class="text_info">
+                    <div class="text_info_each">qq线代群_第二周作业_课本p52习题二:1,3,5,7<span class="deadline">4/11</span><span class="fold_dis">提示</span><span>如果一下子计算A50, A100太困难，先计算A2,A3找规律。</span></div>
+                </div>
+            </div>
+
+            <div class="text">
+                <div class="text_title">物理<a href="https://mooc1-1.chaoxing.com/visit/interaction">学习通网页版</a></div>
+                <div class="text_info">
+                    <div class="text_info_each" hidden>第7周线上超星课<span class="deadline">4/12</span><span class="fold_dis">要求</span><span>（1）在超星学习通看通知要求，明确本周大物混合教学的线上课学习内容，遇到运动会自行安排学习时间。
+                        （2）当堂完成上课前的签到（迟到不能超过5分钟）。
+                        （3）学习以下视频和教材相关部分，并按时完成配套的线上作业（本周六前完成），以及书写作业册《质点力学》相应练习：
+                        2.6  相对运动（11:34） 
+                        3.1  牛顿定律（8:44） 
+                        3.2  牛顿定律的应用举例（8:41）
+                        4.1 动量动能定理与牛顿第二定律的关系（8:19） 
+                        4.2 质点和质点系的动量定理及动量守恒（14:22） 
+                        4.3 功、质点的动能定理（11:09） 
+                        4.4 保守力与非保守力，势能（13:03） 
+                        4.5 功能原理机械能守恒定律（12:19）
+                        {课程名称：《大学物理学II》（上）2025.3-2025.7}</span></div>
+                    <div class="text_info_each">作业册_质点力学1全部<span class="deadline">4/25</span><span class="notice">拍照上传</span>
+                        · 作业册_质点力学23的部分<span class="deadline">不知道</span><span class="notice">做完才收</span></div>
+                    <div class="text_info_each" hidden>学习通_线上作业<span class="fold_dis">注意</span><span>有一次重做机会，注意截止时间，补交要被扣分</span><span class="deadline">4/12</span></div>
+                </div>
+            </div>
+
+            <div class="text">
+                <div class="text_title">英语</div>
+                <div class="text_info">
+                    <div class="text_info_each">welearn_extended listening<span class="notice">单元/周</span><span class="fold_dis">总目标</span><span>第二册,期末总时长大于10h(才有及格分)</span></div>
+                    <div class="text_info_each">阅读教程<span class="deadline">4/25</span><span class="notice">单元/周</span></div>
+                    <div class="text_info_each">新视野3_单元三_预习Text A<span class="deadline">4/18</span></div>
+                    <div class="text_info_each">FIF口语训练_课文朗读1-6单元<span class="deadline">6/30</span><span class="notice">学哪做哪,听力课抽读</span></div>
+                    <div class="text_info_each">翻译PPT上的<span class="deadline">4/18</span><span class="fold_dis">文段</span><span>近年来，随着人工智能技术的发展，机器人在春节联欢晚会上的应用越来越广泛。它们不仅能进行歌舞表演，还能与主持人互动。 
+                        
+                        机器人技术的应用不仅增加了春晚的科技感，也提升了观众的观看体验，使节目更加生动有趣。此外，这些机器人展示了中国在人工智能和智能制造领域的进步，向世界展现了科技创新的魅力。未来，随着技术的进步，机器人在春晚中的表现将更加精彩，并推动人工智能在文化娱乐领域的广泛应用。</span></div>
+                </div>
+            </div>
+
+            <div class="text">
+                <div class="text_title">大学生职生规划与就业指导</div>
+                <div class="text_info">
+                    <div class="text_info_each">模板_见qq群或<a href="https://pan.baidu.com/s/1PYpJuBcSaNIK8OZu-4QUrA ">百度网盘链接</a>,不少于3000字<span class="deadline">4/18</span><span class="fold_dis">交电子和纸质版...</span><span>交电子和纸质版,不需要手写,电子版发学委QQ邮箱(以word附件形式),参考内容太多了就不放了</span></div>
+                </div>
+            </div>
+
+            <div class="text">
+                <div class="text_title">物理实验<a href="https://syxk.cqut.edu.cn/">选课网站(需要校园网,8个全选)</a></div>
+                <div class="text_info">
+                    <div class="text_info_each">实验报告,预习,评教<span class="deadline">四个工作日内</span></div>
+                </div>
+            </div>
+
+            <div class="text">
+                <div class="text_title">晚自习:晚上7:00到8:40</div>
+                <div class="text_info">
+                    <div class="text_info_each">周1_当日临时找
+                        · 周2-4_弘远楼A108
+                    <div class="fold_dis">规则</div><span>周1-4都要到晚自习教室里进行学习(指定时段)
+
+                    可签到签退的范围：6点到10点半
+                    签到签退的间隔时间必须有90分钟
+
+                    基础目标：不间断
+                    自行分配打卡时间
+
+                    学习通app打卡
+                    </span></div>
+                </div>
+            </div>
+
+            <div class="text">
+                <div class="text_title">第二课堂<span class="deadline">本学年</span></div>
+                <div class="text_info">
+                    <div class="text_info_each">每学年须完成德16分，智8分，体8分，美8分，劳8分，方才合格，如不合格影响评奖评优和推优入党，甚至与毕业挂钩</div>
+                </div>
+            </div>
+
+            <div class="text">
+                <div class="text_title">步道乐跑<span class="deadline">本学期</span></div>
+                <div class="text_info">
+                    <div class="text_info_each">学期目标:55次<span class="notice">60%完成率才有分</span><span class="fold_dis">教训</span><span>长时间暂停(>1h),结束时间过晚均不计入次数</span></div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    <head>
+        <script>
+            // 按钮
+            let buttons_fold = document.querySelectorAll('.button_hidden');
+
+            buttons_fold.forEach(element => {
+                element.addEventListener('click',event => {
+                    let target = event.target.nextElementSibling;
+                    
+                    if (target.hidden)
+                        target.hidden = 0;
+                    else
+                        target.hidden = 1;
+                });
+            });
+
+            
+            // 时间显示
+            let now = new Date();
+            
+            let texts_dead_line = document.querySelectorAll('.deadline');
+            
+            texts_dead_line.forEach(element => {
+                var dead_line = new Date();
+
+                // 旧方法
+                
+                // var text_dead_line = element.textContent.split('/');
+
+                // if (text_dead_line.length === 2) {
+                // dead_line.setDate(Number(text_dead_line[1]));
+                // dead_line.setMonth(Number(text_dead_line[0])-1);
+                // }
+                // else {
+                // dead_line.setDate(Number(text_dead_line[2]));
+                // dead_line.setMonth(Number(text_dead_line[1])-1);
+                // dead_line.setFullYear(Number(text_dead_line[0]));
+                // }
+
+                var re_time = /(?:(\d{1,4})\/)?(\d+)\/(\d{1,2})/;
+
+                var text_dead_line = re_time.exec(element.textContent);
+
+                if (!text_dead_line) return;
+                
+                if (text_dead_line[1])
+                    dead_line.setFullYear(Number(text_dead_line[1]));
+                dead_line.setDate(1);
+                dead_line.setMonth(Number(text_dead_line[2])-1);
+                dead_line.setDate(Number(text_dead_line[3]));
+
+                var day_last = Math.trunc((dead_line-now)/1000/3600/24);
+
+                if (element.textContent.includes('/')) {
+                    if (day_last > 0)
+                        element.textContent = `${element.textContent}剩${day_last}天`;
+                    else if (day_last === 0)
+                        element.textContent += '截止日';
+                    else if (day_last === -1)
+                        element.textContent += '已截止';
+                    else
+                        element.parentElement.hidden = 1;
+
+
+                    if (day_last > 3)
+                    element.style.color = '#20db61';
+                    
+                    else if (day_last > 1)
+                    element.style.color = '#ff8222';
+
+                    else
+                    element.style.color = '#ff3e0e';
+                }
+            })
+
+
+            //展开(新按钮)
+            let fold_dis = document.querySelectorAll('.fold_dis');
+
+            fold_dis.forEach(element => {
+                let target = element.nextElementSibling;
+                let time_lastclick = Date.now();
+
+                target.hidden = 1;
+
+                element.addEventListener('click',event => {
+                    if (element.getAttribute('unfold')==='1') {
+                        if ((Date.now() - time_lastclick) > 750) { // 毫秒间隔
+                            time_lastclick = Date.now();
+                            return;
+                        }
+
+                        element.setAttribute('unfold','0');
+                    }
+                    else
+                        element.setAttribute('unfold','1');
+
+                    [target.textContent,element.textContent] = [element.textContent,target.textContent];
+
+                });
+            });
+
+
+            // 优化链接
+            let a = document.querySelectorAll('a');
+
+            a.forEach(element => {
+                element.target = "_blank";
+            })
+
+
+            // 彩蛋
+            let version = document.querySelector('.notice');
+            let time_click_version = 0;
+            
+            version.addEventListener('click',event => {
+                ++time_click_version;
+                if (time_click_version === 5) {
+                    document.body.innerHTML += `
+                        <div class="text">
+                            <div class="text_title">广告位招租${version.textContent}</div>
+                            <div class="text_info">
+                            <div class="text_info_each">这不是彩蛋</div>
+                            </div>
+                        </div>
+                        `;
+                }
+            });
+
+            
+            // 时间分类窗口自适应
+            let sort_time = document.querySelector('.sort_time');
+
+            function change_sort_time() {
+                if (window.innerWidth > 600)
+                    sort_time.hidden = 0;
+                else
+                    sort_time.hidden = 1;
+            }
+
+            change_sort_time();
+            window.addEventListener('resize',change_sort_time);
+            
+
+            let buttons_joke = document.getElementById('button_joke');
+
+            // 这种修改地址方法被浏览器拦截了
+            // buttons_joke.addEventListener('click',event => {
+            //     let target = event.target.nextElementSibling;
+            //
+            //     target.src = '//player.bilibili.com/player.html?isOutside=true&aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&p=1&danmaku=0&allowfullscreen‘
+            // })
+        </script>
+        <title></title>
+    </head>
+</html>
