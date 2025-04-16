@@ -1,0 +1,199 @@
+            
+/* 顶栏 */
+.top {
+    background-color: rgb(99, 99, 138);
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* 顶栏文本 */
+.top_text{
+    color: rgb(245, 222, 222);
+    font-size: 35px;
+
+    position:absolute;
+
+    left: 5px;
+
+}
+
+/* 作业窗口 */
+/*#wf{*/
+/*    width: 100vw;*/
+/*    height: calc(100vh - 50px);*/
+/*    position: absolute;*/
+/*    top: 50px;*/
+/*    left: 0;*/
+/*    */
+/*    border: 0;*/
+/*}*/
+
+/* 作业类 */
+.text{
+    background-color: rgb(145, 145, 145);
+    
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+.text:first-of-type{
+    margin-top: 60px;
+}
+
+/* 类标题 */
+.text_title{
+    color:rgb(240, 248, 255);
+    background-color: rgb(66, 66, 66);
+    padding: 5px;
+    padding-left: 10px;
+
+    font-size: 25px;
+}
+
+/* 类内容 */
+.text_info_each{
+    border-color: black;
+    
+    padding: 3px 3px 3px 10px;
+
+    border-top: 1px solid;
+
+    white-space: pre-line;
+
+    overflow: auto;
+}
+
+.text_info_each::before{
+    content:"· ";
+}
+
+/* 提示 */
+.notice{
+    float:right;
+    font-size: 0.6em;
+    white-space: nowrap;
+}
+
+/* 截止 */
+.deadline{
+    float: right;
+    color: #3fbce6;
+    /*color: #20db61;*/
+    white-space: nowrap;
+
+    background-color: rgb(114, 114, 119);
+    border-radius: 5px;
+    font-size: 0.8em;
+    padding: 0.2em;
+    margin-bottom: -0.05em;
+}
+
+/* .deadline::after{
+    content: "截止";
+} */
+
+/* .deadline:empty{
+    color:#ff3e0e
+} */
+
+/* .deadline:empty::before{
+    content: "已";
+} */
+
+/* 重要 */
+.notice[important='1']{
+    color: #ff8222;
+}
+
+button{
+    font-size: 20px;
+}
+
+a{
+    background-color: rgb(228, 234, 239);
+    border-radius: 5px;
+    font-size: 0.8em;
+    padding: 0.2em;
+
+    color: #035a85;
+}
+
+.sort_time{
+    position: relative;
+    border-radius: 5px;
+    float: right;
+
+    color: #424060;
+    font-size: 20px;
+    height: 30px;
+}
+
+.sort_time.top{
+    width: 350px;
+
+    background-color: rgb(114, 114, 119);
+    
+    left: -10px;
+    top: 5px;
+
+    padding: 5px 10px;
+}
+
+/* 新按钮 */
+.fold_dis{
+    background-color: rgb(228, 231, 233);
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+    margin-right: 5px;
+
+    border-radius: 3px;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease 0s;
+}
+
+.fold_dis[unfold='1']{
+    background-color: #727d84;
+
+    margin-right: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+    width: auto;
+
+    display: block;
+
+    padding: 10px;
+}
+
+.fold_dis:hover{
+    background-color: #95a5aa;
+
+}
+
+.fold_dis[unfold='0']{
+    user-select: none;
+}
+
+
+/*彩蛋*/
+/* #video_joke{
+    position: relative;
+
+    top: -156px;
+    left: 160px;
+
+    margin-bottom: -160px;
+
+    height: 164px;
+    width: 292px;
+} */

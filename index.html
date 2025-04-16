@@ -1,216 +1,15 @@
 <!DOCTYPE html>
 <html lang="cn-ch">
     <head>
-        <title>2班作业汇总</title>
+        <title>2班作业汇总4/16</title>
         <meta name="author" content="World">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            
-/* 顶栏 */
-.top {
-    background-color: rgb(99, 99, 138);
-    width: 100vw;
-    height: 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-/* 顶栏文本 */
-.top_text{
-    color: rgb(245, 222, 222);
-    font-size: 35px;
-
-    position:absolute;
-
-    left: 5px;
-
-}
-
-/* 作业窗口 */
-/*#wf{*/
-/*    width: 100vw;*/
-/*    height: calc(100vh - 50px);*/
-/*    position: absolute;*/
-/*    top: 50px;*/
-/*    left: 0;*/
-/*    */
-/*    border: 0;*/
-/*}*/
-
-/* 作业类 */
-.text{
-    background-color: rgb(145, 145, 145);
-    
-    margin-bottom: 10px;
-
-    font-size: 20px;
-}
-
-.text:first-of-type{
-    margin-top: 60px;
-}
-
-/* 类标题 */
-.text_title{
-    color:rgb(240, 248, 255);
-    background-color: rgb(66, 66, 66);
-    padding: 5px;
-    padding-left: 10px;
-
-    font-size: 25px;
-}
-
-/* 类内容 */
-.text_info_each{
-    border-color: black;
-    
-    padding: 3px 3px 3px 10px;
-
-    border-top: 1px solid;
-
-    white-space: pre-line;
-
-    overflow: auto;
-}
-
-.text_info_each::before{
-    content:"· ";
-}
-
-/* 提示 */
-.notice{
-    float:right;
-    font-size: 0.6em;
-    white-space: nowrap;
-}
-
-/* 截止 */
-.deadline{
-    float: right;
-    color: #3fbce6;
-    /*color: #20db61;*/
-    white-space: nowrap;
-
-    background-color: rgb(114, 114, 119);
-    border-radius: 5px;
-    font-size: 0.8em;
-    padding: 0.2em;
-    margin-bottom: -0.05em;
-}
-
-/* .deadline::after{
-    content: "截止";
-} */
-
-/* .deadline:empty{
-    color:#ff3e0e
-} */
-
-/* .deadline:empty::before{
-    content: "已";
-} */
-
-/* 重要 */
-.notice[important='1']{
-    color: #ff8222;
-}
-
-button{
-    font-size: 20px;
-}
-
-a{
-    background-color: rgb(228, 234, 239);
-    border-radius: 5px;
-    font-size: 0.8em;
-    padding: 0.2em;
-
-    color: #035a85;
-}
-
-.sort_time{
-    position: relative;
-    border-radius: 5px;
-    float: right;
-
-    color: #424060;
-    font-size: 20px;
-    height: 30px;
-}
-
-.sort_time.top{
-    width: 350px;
-
-    background-color: rgb(114, 114, 119);
-    
-    left: -10px;
-    top: 5px;
-
-    padding: 5px 10px;
-}
-
-/* 新按钮 */
-.fold_dis{
-    background-color: rgb(228, 231, 233);
-
-    padding-left: 5px;
-    padding-right: 5px;
-
-    margin-right: 5px;
-
-    border-radius: 3px;
-
-    display: inline-block;
-
-    cursor: pointer;
-
-    transition: all 0.3s ease 0s;
-}
-
-.fold_dis[unfold='1']{
-    background-color: #727d84;
-
-    margin-right: 10px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-
-    width: auto;
-
-    display: block;
-
-    padding: 10px;
-}
-
-.fold_dis:hover{
-    background-color: #95a5aa;
-
-}
-
-.fold_dis[unfold='0']{
-    user-select: none;
-}
-
-
-/*彩蛋*/
-/* #video_joke{
-    position: relative;
-
-    top: -156px;
-    left: 160px;
-
-    margin-bottom: -160px;
-
-    height: 164px;
-    width: 292px;
-} */
-
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="top">
-            <div class="top_text">作业汇总<span class="notice" virsion = '1'>v_0.11</span></div>
+            <div class="top_text">作业汇总<span class="notice" virsion = '1'>v_0.11.1</span></div>
             <div class="sort_time top">
                 时间
                 <span class="sort_time" style="background-color: #3fbce6;padding-left: 10px;">
@@ -257,17 +56,17 @@ a{
             <div class="text">
                 <div class="text_title">物理<a href="https://mooc1-1.chaoxing.com/visit/interaction">学习通网页版</a></div>
                 <div class="text_info">
-                    <div class="text_info_each" hidden>第7周线上超星课<span class="deadline">4/12</span><span class="fold_dis">要求</span><span>（1）在超星学习通看通知要求，明确本周大物混合教学的线上课学习内容，遇到运动会自行安排学习时间。
+                    <div class="text_info_each">第8周线上超星课<span class="deadline">4/19</span><span class="fold_dis">要求</span><span>（1）在超星学习通看通知要求，明确本周大物混合教学的线上课学习内容，遇到运动会自行安排学习时间。
+                        （1）在超星学习通看通知要求，明确本周大物混合教学的线上课学习内容。
                         （2）当堂完成上课前的签到（迟到不能超过5分钟）。
-                        （3）学习以下视频和教材相关部分，并按时完成配套的线上作业（本周六前完成），以及书写作业册《质点力学》相应练习：
-                        2.6  相对运动（11:34） 
-                        3.1  牛顿定律（8:44） 
-                        3.2  牛顿定律的应用举例（8:41）
-                        4.1 动量动能定理与牛顿第二定律的关系（8:19） 
-                        4.2 质点和质点系的动量定理及动量守恒（14:22） 
-                        4.3 功、质点的动能定理（11:09） 
-                        4.4 保守力与非保守力，势能（13:03） 
-                        4.5 功能原理机械能守恒定律（12:19）
+                        （3）学习以下视频和教材相关部分，并按时完成线上作业以及线下作业：
+                        15.20 牛顿运动举例(33:39)
+                        15.22 质点系的动量定理（26：40）
+                        15.25 保守力、势能（21：57）
+                        15.26 动能定理、功能原理、机械能守恒（38：02）
+                        5.1 刚体定轴转动，运动学（6:51） 
+                        完成线下作业之后观看：
+                        12.1质点运动学（观看作业解答视频之后，红笔改正相应练习但不打勾叉，线下课有原题随堂测）
                         {课程名称：《大学物理学II》（上）2025.3-2025.7}</span></div>
                     <div class="text_info_each">作业册_质点力学1全部<span class="deadline">4/25</span><span class="notice">拍照上传</span>
                         · 作业册_质点力学23的部分<span class="deadline">不知道</span><span class="notice">做完才收</span></div>
@@ -337,158 +136,7 @@ a{
         </div>
     </body>
     <head>
-        <script>
-            // 按钮
-            let buttons_fold = document.querySelectorAll('.button_hidden');
-
-            buttons_fold.forEach(element => {
-                element.addEventListener('click',event => {
-                    let target = event.target.nextElementSibling;
-                    
-                    if (target.hidden)
-                        target.hidden = 0;
-                    else
-                        target.hidden = 1;
-                });
-            });
-
-            
-            // 时间显示
-            let now = new Date();
-            
-            let texts_dead_line = document.querySelectorAll('.deadline');
-            
-            texts_dead_line.forEach(element => {
-                var dead_line = new Date();
-
-                // 旧方法
-                
-                // var text_dead_line = element.textContent.split('/');
-
-                // if (text_dead_line.length === 2) {
-                // dead_line.setDate(Number(text_dead_line[1]));
-                // dead_line.setMonth(Number(text_dead_line[0])-1);
-                // }
-                // else {
-                // dead_line.setDate(Number(text_dead_line[2]));
-                // dead_line.setMonth(Number(text_dead_line[1])-1);
-                // dead_line.setFullYear(Number(text_dead_line[0]));
-                // }
-
-                var re_time = /(?:(\d{1,4})\/)?(\d+)\/(\d{1,2})/;
-
-                var text_dead_line = re_time.exec(element.textContent);
-
-                if (!text_dead_line) return;
-                
-                if (text_dead_line[1])
-                    dead_line.setFullYear(Number(text_dead_line[1]));
-                dead_line.setDate(1);
-                dead_line.setMonth(Number(text_dead_line[2])-1);
-                dead_line.setDate(Number(text_dead_line[3]));
-
-                var day_last = Math.trunc((dead_line-now)/1000/3600/24);
-
-                if (element.textContent.includes('/')) {
-                    if (day_last > 0)
-                        element.textContent = `${element.textContent}剩${day_last}天`;
-                    else if (day_last === 0)
-                        element.textContent += '截止日';
-                    else if (day_last === -1)
-                        element.textContent += '已截止';
-                    else
-                        element.parentElement.hidden = 1;
-
-
-                    if (day_last > 3)
-                    element.style.color = '#20db61';
-                    
-                    else if (day_last > 1)
-                    element.style.color = '#ff8222';
-
-                    else
-                    element.style.color = '#ff3e0e';
-                }
-            })
-
-
-            //展开(新按钮)
-            let fold_dis = document.querySelectorAll('.fold_dis');
-
-            fold_dis.forEach(element => {
-                let target = element.nextElementSibling;
-                let time_lastclick = Date.now();
-
-                target.hidden = 1;
-
-                element.addEventListener('click',event => {
-                    if (element.getAttribute('unfold')==='1') {
-                        if ((Date.now() - time_lastclick) > 750) { // 毫秒间隔
-                            time_lastclick = Date.now();
-                            return;
-                        }
-
-                        element.setAttribute('unfold','0');
-                    }
-                    else
-                        element.setAttribute('unfold','1');
-
-                    [target.textContent,element.textContent] = [element.textContent,target.textContent];
-
-                });
-            });
-
-
-            // 优化链接
-            let a = document.querySelectorAll('a');
-
-            a.forEach(element => {
-                element.target = "_blank";
-            })
-
-
-            // 彩蛋
-            let version = document.querySelector('.notice');
-            let time_click_version = 0;
-            
-            version.addEventListener('click',event => {
-                ++time_click_version;
-                if (time_click_version === 5) {
-                    document.body.innerHTML += `
-                        <div class="text">
-                            <div class="text_title">广告位招租${version.textContent}</div>
-                            <div class="text_info">
-                            <div class="text_info_each">这不是彩蛋</div>
-                            </div>
-                        </div>
-                        `;
-                }
-            });
-
-            
-            // 时间分类窗口自适应
-            let sort_time = document.querySelector('.sort_time');
-
-            function change_sort_time() {
-                if (window.innerWidth > 600)
-                    sort_time.hidden = 0;
-                else
-                    sort_time.hidden = 1;
-            }
-
-            change_sort_time();
-            window.addEventListener('resize',change_sort_time);
-            
-
-            let buttons_joke = document.getElementById('button_joke');
-
-            // 这种修改地址方法被浏览器拦截了
-            // buttons_joke.addEventListener('click',event => {
-            //     let target = event.target.nextElementSibling;
-            //
-            //     target.src = '//player.bilibili.com/player.html?isOutside=true&aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&p=1&danmaku=0&allowfullscreen‘
-            // })
-        </script>
+        <script src="script.js"></script>
         <title></title>
     </head>
 </html>
