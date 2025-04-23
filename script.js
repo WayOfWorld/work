@@ -139,8 +139,27 @@ function change_sort_time() {
 change_sort_time();
 window.addEventListener('resize',change_sort_time);
 
-
 let buttons_joke = document.getElementById('button_joke');
+
+// 删除没有内容的作业
+document.querySelectorAll('.text').forEach(element => {
+    if(element.querySelectorAll('.text_info_each:not([hidden])').length === 0)
+        element.hidden = 1;
+})
+
+// 格式控制
+document.querySelectorAll('.formate').forEach(element => {
+    if (document.querySelector(`meta[name='${element.textContent}']`))
+        element.textContent = document.querySelector(`meta[name='${element.textContent}']`).getAttribute('content');
+})
+
+// 提示
+let info_view_last = [document.querySelector('meta[name="version"]').getAttribute('content'),document.querySelector('meta[name="revised"]').getAttribute('content')].join('_');
+
+if (localStorage.getItem('view_last') != info_view_last) {
+    alert(document.querySelector('#notice').textContent.trim());
+    localStorage.setItem('time_last',info_view_last);
+}
 
 // 这种修改地址方法被浏览器拦截了
 // buttons_joke.addEventListener('click',event => {

@@ -17,7 +17,6 @@
     position:absolute;
 
     left: 5px;
-
 }
 
 /* 作业窗口 */
@@ -37,7 +36,7 @@
     
     margin-bottom: 10px;
 
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .text:first-of-type{
@@ -64,7 +63,7 @@
 
     white-space: pre-line;
 
-    overflow: auto;
+    overflow: hidden;
 }
 
 .text_info_each::before{
@@ -87,8 +86,8 @@
 
     background-color: rgb(114, 114, 119);
     border-radius: 5px;
-    font-size: 0.8em;
-    padding: 0.2em;
+    font-size: 0.85em;
+    padding: 0.15em;
     margin-bottom: -0.05em;
 }
 
@@ -114,12 +113,23 @@ button{
 }
 
 a{
-    background-color: rgb(228, 234, 239);
-    border-radius: 5px;
-    font-size: 0.8em;
+    /* background-color: rgb(228, 234, 239); */
+    /* border-radius: 5px; */
+    /* font-size: 0.8em; */
     padding: 0.2em;
 
-    color: #035a85;
+    /* color: #035a85; */
+    /* color: inherit; */
+
+    color: color-mix(in srgb, currentColor 60%, #389ed1 40%);
+
+    transition: all 0.5s ease 0s;
+}
+
+a:hover {
+    color: #389ed1;
+
+    text-decoration: none;
 }
 
 .sort_time{
