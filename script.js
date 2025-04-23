@@ -158,7 +158,7 @@ let info_view_last = [document.querySelector('meta[name="version"]').getAttribut
 
 if (localStorage.getItem('view_last') != info_view_last) {
     alert(document.querySelector('#notice').textContent.trim());
-    localStorage.setItem('time_last',info_view_last);
+    localStorage.setItem('view_last',info_view_last);
 }
 
 // 这种修改地址方法被浏览器拦截了
