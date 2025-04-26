@@ -47,7 +47,7 @@ texts_dead_line.forEach(element => {
     dead_line.setMonth(Number(text_dead_line[2])-1);
     dead_line.setDate(Number(text_dead_line[3]));
 
-    var day_last = Math.trunc((dead_line-now)/1000/3600/24);
+    var day_last = Math.floor((dead_line-now)/1000/3600/24);
 
     if (element.textContent.includes('/')) {
         if (day_last > 0)
