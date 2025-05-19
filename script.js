@@ -54,10 +54,12 @@ texts_dead_line.forEach(element => {
             element.textContent = `${element.textContent}剩${day_last}天`;
         else if (day_last === 0)
             element.textContent += '截止日';
-        else if (day_last === -1)
+        else if (day_last < 0)
             element.textContent += '已截止';
-        else
-            element.parentElement.hidden = 1;
+        // else if (day_last === -1)
+        //     element.textContent += '已截止';
+        // else
+        //     element.parentElement.hidden = 1;
 
 
         if (day_last > 3)
