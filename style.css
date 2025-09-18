@@ -4,6 +4,7 @@
     background-color: rgb(99, 99, 138);
     width: 100vw;
     height: 50px;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -14,21 +15,8 @@
     color: rgb(245, 222, 222);
     font-size: 35px;
 
-    position:absolute;
-
     left: 5px;
 }
-
-/* 作业窗口 */
-/*#wf{*/
-/*    width: 100vw;*/
-/*    height: calc(100vh - 50px);*/
-/*    position: absolute;*/
-/*    top: 50px;*/
-/*    left: 0;*/
-/*    */
-/*    border: 0;*/
-/*}*/
 
 /* 作业类 */
 .text{
@@ -91,38 +79,14 @@
     margin-bottom: -0.05em;
 }
 
-/* .deadline::after{
-    content: "截止";
-} */
-
-/* .deadline:empty{
-    color:#ff3e0e
-} */
-
-/* .deadline:empty::before{
-    content: "已";
-} */
-
 /* 重要 */
-.notice[important='1']{
+.notice[important]{
     color: #ff8222;
 }
 
-button{
-    font-size: 20px;
-}
-
 a{
-    /* background-color: rgb(228, 234, 239); */
-    /* border-radius: 5px; */
-    /* font-size: 0.8em; */
     padding: 0.2em;
-
-    /* color: #035a85; */
-    /* color: inherit; */
-
     color: color-mix(in srgb, currentColor 60%, #389ed1 40%);
-
     transition: all 0.5s ease 0s;
 }
 
@@ -130,27 +94,6 @@ a:hover {
     color: #389ed1;
 
     text-decoration: none;
-}
-
-.sort_time{
-    position: relative;
-    border-radius: 5px;
-    float: right;
-
-    color: #424060;
-    font-size: 20px;
-    height: 30px;
-}
-
-.sort_time.top{
-    width: 350px;
-
-    background-color: rgb(114, 114, 119);
-    
-    left: -10px;
-    top: 5px;
-
-    padding: 5px 10px;
 }
 
 /* 新按钮 */
@@ -193,17 +136,3 @@ a:hover {
 .fold_dis[unfold='0']{
     user-select: none;
 }
-
-
-/*彩蛋*/
-/* #video_joke{
-    position: relative;
-
-    top: -156px;
-    left: 160px;
-
-    margin-bottom: -160px;
-
-    height: 164px;
-    width: 292px;
-} */
