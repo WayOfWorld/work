@@ -1,13 +1,108 @@
-            
+* {
+    user-select: none;
+}
+
+.wallpaper {
+    position: fixed;
+
+    top: -1vh;
+    left: -1vw;
+
+    height: 102vh;
+    width: 102vw;
+
+    z-index: -1;
+
+    filter: blur(3px);
+}
+
+
 /* 顶栏 */
 .top {
-    background-color: rgb(99, 99, 138);
-    width: 100vw;
-    height: 50px;
+    top: 10px;
+}
+
+.left {
+    left: 0;
+    width: 25vw;
 
     position: fixed;
-    top: 0;
-    left: 0;
+}
+
+/* 标题 */
+.topic {
+    height: 395px;
+    background-color: rgb(99, 99, 138);
+    
+    overflow: hidden;
+
+    border-radius: 0px 10px 10px 0px / 0px 10px 10px 0px;
+
+    transition: all 0.5s ease 0s;
+}
+
+.topic[fold] {
+    height: 50px;
+}
+
+/* 日志 */
+.log {
+    background-color:rgb(234, 242, 244);
+
+    white-space: pre-line;
+
+    margin: 12px;
+    margin-left:0;
+    padding: 10px;
+
+    height: 300px;
+    overflow: auto;
+
+    border-radius: 0px 10px 10px 0px / 0px 10px 10px 0px;
+}
+
+/* 概况 */
+.overview {
+    margin: 10px;
+    padding: 5px;
+
+    border-radius: 5px;
+
+    background-color: rgba(99, 99, 138,0.5);
+
+    overflow: hidden;
+
+    backdrop-filter: blur(10px);
+}
+
+/* 数量统计 */
+.todo_numbers {
+    float: right;
+    width: 105px;
+    white-space: nowrap;
+    overflow: scroll left;
+}
+
+.todo_number {
+    background-color: #cbcbcb;
+
+    font-size: 15px;
+    float: left;
+
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+
+    margin: 1px 5px;
+    text-align: center;
+}
+
+progress {
+    float: right;
+
+    width: 80px;
+
+    margin: 5px;
 }
 
 /* 顶栏文本 */
@@ -15,20 +110,40 @@
     color: rgb(245, 222, 222);
     font-size: 35px;
 
-    left: 5px;
+    left: 10px;
+}
+
+.info{
+    position: absolute;
+
+    left: 30vw;
+    width: 65vw;
+}
+
+.text * {
+    filter: none;
 }
 
 /* 作业类 */
-.text{
-    background-color: rgb(145, 145, 145);
-    
+.text {
     margin-bottom: 10px;
 
     font-size: 22px;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    background-color: rgba(145, 145, 145,0.5);
+    backdrop-filter: blur(10px);    
 }
 
-.text:first-of-type{
-    margin-top: 60px;
+.text * {
+    user-select: text;
+}
+
+/* 工具栏 */
+.func {
+    background-color: rgb(99, 99, 138);
 }
 
 /* 类标题 */
@@ -52,10 +167,6 @@
     white-space: pre-line;
 
     overflow: hidden;
-}
-
-.text_info_each::before{
-    content:"· ";
 }
 
 /* 提示 */
@@ -136,3 +247,4 @@ a:hover {
 .fold_dis[unfold='0']{
     user-select: none;
 }
+

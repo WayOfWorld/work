@@ -101,6 +101,17 @@ fold_dis.forEach(element => {
 });
 
 
+//展开(日志)
+let fold_log = document.querySelector('.news_button');
+let topic = document.querySelector('.topic');
+
+topic.addEventListener('click',event => {
+    if (topic.getAttribute('fold') == null)
+        topic.setAttribute('fold','');
+    else
+        topic.removeAttribute('fold');
+});
+
 // 优化链接
 let a = document.querySelectorAll('a');
 
@@ -151,6 +162,7 @@ document.querySelectorAll('.text').forEach(element => {
 
 // 格式控制
 document.querySelectorAll('.formate').forEach(element => {
+    console.log(1);
     if (document.querySelector(`meta[name='${element.textContent}']`))
         element.textContent = document.querySelector(`meta[name='${element.textContent}']`).getAttribute('content');
 })
@@ -162,10 +174,3 @@ if (localStorage.getItem('view_last') != info_view_last) {
     alert(document.querySelector('#notice').textContent.trim());
     localStorage.setItem('view_last',info_view_last);
 }
-
-// 这种修改地址方法被浏览器拦截了
-// buttons_joke.addEventListener('click',event => {
-//     let target = event.target.nextElementSibling;
-//
-//     target.src = '//player.bilibili.com/player.html?isOutside=true&aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&p=1&danmaku=0&allowfullscreen‘
-// })
