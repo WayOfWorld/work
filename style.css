@@ -143,6 +143,13 @@ progress {
 
 /* 工具栏 */
 .func {
+    margin-bottom: 10px;
+
+    font-size: 22px;
+
+    border-radius: 8px;
+    overflow: hidden;
+
     background-color: rgb(99, 99, 138);
 }
 
