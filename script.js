@@ -21,20 +21,6 @@ let texts_dead_line = document.querySelectorAll('.deadline');
 texts_dead_line.forEach(element => {
     var dead_line = new Date();
 
-    // 旧方法
-    
-    // var text_dead_line = element.textContent.split('/');
-
-    // if (text_dead_line.length === 2) {
-    // dead_line.setDate(Number(text_dead_line[1]));
-    // dead_line.setMonth(Number(text_dead_line[0])-1);
-    // }
-    // else {
-    // dead_line.setDate(Number(text_dead_line[2]));
-    // dead_line.setMonth(Number(text_dead_line[1])-1);
-    // dead_line.setFullYear(Number(text_dead_line[0]));
-    // }
-
     var re_time = /(?:(\d{1,4})\/)?(\d+)\/(\d{1,2})/;
 
     var text_dead_line = re_time.exec(element.textContent);
@@ -101,6 +87,17 @@ fold_dis.forEach(element => {
 });
 
 
+//展开(日志)
+let fold_log = document.querySelector('.news_button');
+let topic = document.querySelector('.topic');
+
+topic.addEventListener('click',event => {
+    if (topic.getAttribute('fold') == null)
+        topic.setAttribute('fold','');
+    else
+        topic.removeAttribute('fold');
+});
+
 // 优化链接
 let a = document.querySelectorAll('a');
 
@@ -127,30 +124,16 @@ version.addEventListener('click',event => {
     }
 });
 
-
-// 时间分类窗口自适应
-let sort_time = document.querySelector('.sort_time');
-
-function change_sort_time() {
-    if (window.innerWidth > 600)
-        sort_time.hidden = 0;
-    else
-        sort_time.hidden = 1;
-}
-
-change_sort_time();
-window.addEventListener('resize',change_sort_time);
-
-let buttons_joke = document.getElementById('button_joke');
-
 // 删除没有内容的作业
 document.querySelectorAll('.text').forEach(element => {
     if(element.querySelectorAll('.text_info_each:not([hidden])').length === 0)
         element.hidden = 1;
 })
 
+
 // 格式控制
 document.querySelectorAll('.formate').forEach(element => {
+
     if (document.querySelector(`meta[name='${element.textContent}']`))
         element.textContent = document.querySelector(`meta[name='${element.textContent}']`).getAttribute('content');
 })
@@ -162,10 +145,3 @@ if (localStorage.getItem('view_last') != info_view_last) {
     alert(document.querySelector('#notice').textContent.trim());
     localStorage.setItem('view_last',info_view_last);
 }
-
-// 这种修改地址方法被浏览器拦截了
-// buttons_joke.addEventListener('click',event => {
-//     let target = event.target.nextElementSibling;
-//
-//     target.src = '//player.bilibili.com/player.html?isOutside=true&aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&p=1&danmaku=0&allowfullscreen‘
-// })

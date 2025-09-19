@@ -1,12 +1,108 @@
-            
+* {
+    user-select: none;
+}
+
+.wallpaper {
+    position: fixed;
+
+    top: -1vh;
+    left: -1vw;
+
+    height: 102vh;
+    width: 102vw;
+
+    z-index: -1;
+
+    filter: blur(3px);
+}
+
+
 /* 顶栏 */
 .top {
-    background-color: rgb(99, 99, 138);
-    width: 100vw;
-    height: 50px;
-    position: fixed;
-    top: 0;
+    top: 10px;
+}
+
+.left {
     left: 0;
+    width: 25vw;
+
+    position: fixed;
+}
+
+/* 标题 */
+.topic {
+    height: 395px;
+    background-color: rgb(99, 99, 138);
+    
+    overflow: hidden;
+
+    border-radius: 0px 10px 10px 0px / 0px 10px 10px 0px;
+
+    transition: all 0.5s ease 0s;
+}
+
+.topic[fold] {
+    height: 50px;
+}
+
+/* 日志 */
+.log {
+    background-color:rgb(234, 242, 244);
+
+    white-space: pre-line;
+
+    margin: 12px;
+    margin-left:0;
+    padding: 10px;
+
+    height: 300px;
+    overflow: auto;
+
+    border-radius: 0px 10px 10px 0px / 0px 10px 10px 0px;
+}
+
+/* 概况 */
+.overview {
+    margin: 10px;
+    padding: 5px;
+
+    border-radius: 5px;
+
+    background-color: rgba(99, 99, 138,0.5);
+
+    overflow: hidden;
+
+    backdrop-filter: blur(10px);
+}
+
+/* 数量统计 */
+.todo_numbers {
+    float: right;
+    width: 105px;
+    white-space: nowrap;
+    overflow: scroll left;
+}
+
+.todo_number {
+    background-color: #cbcbcb;
+
+    font-size: 15px;
+    float: left;
+
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+
+    margin: 1px 5px;
+    text-align: center;
+}
+
+progress {
+    float: right;
+
+    width: 80px;
+
+    margin: 5px;
 }
 
 /* 顶栏文本 */
@@ -14,33 +110,47 @@
     color: rgb(245, 222, 222);
     font-size: 35px;
 
-    position:absolute;
-
-    left: 5px;
+    left: 10px;
 }
 
-/* 作业窗口 */
-/*#wf{*/
-/*    width: 100vw;*/
-/*    height: calc(100vh - 50px);*/
-/*    position: absolute;*/
-/*    top: 50px;*/
-/*    left: 0;*/
-/*    */
-/*    border: 0;*/
-/*}*/
+.info{
+    position: absolute;
+
+    left: 30vw;
+    width: 65vw;
+}
+
+.text * {
+    filter: none;
+}
 
 /* 作业类 */
-.text{
-    background-color: rgb(145, 145, 145);
-    
+.text {
     margin-bottom: 10px;
 
     font-size: 22px;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    background-color: rgba(145, 145, 145,0.5);
+    backdrop-filter: blur(10px);    
 }
 
-.text:first-of-type{
-    margin-top: 60px;
+.text * {
+    user-select: text;
+}
+
+/* 工具栏 */
+.func {
+    margin-bottom: 10px;
+
+    font-size: 22px;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    background-color: rgb(99, 99, 138);
 }
 
 /* 类标题 */
@@ -66,10 +176,6 @@
     overflow: hidden;
 }
 
-.text_info_each::before{
-    content:"· ";
-}
-
 /* 提示 */
 .notice{
     float:right;
@@ -91,38 +197,14 @@
     margin-bottom: -0.05em;
 }
 
-/* .deadline::after{
-    content: "截止";
-} */
-
-/* .deadline:empty{
-    color:#ff3e0e
-} */
-
-/* .deadline:empty::before{
-    content: "已";
-} */
-
 /* 重要 */
-.notice[important='1']{
+.notice[important]{
     color: #ff8222;
 }
 
-button{
-    font-size: 20px;
-}
-
 a{
-    /* background-color: rgb(228, 234, 239); */
-    /* border-radius: 5px; */
-    /* font-size: 0.8em; */
     padding: 0.2em;
-
-    /* color: #035a85; */
-    /* color: inherit; */
-
     color: color-mix(in srgb, currentColor 60%, #389ed1 40%);
-
     transition: all 0.5s ease 0s;
 }
 
@@ -130,27 +212,6 @@ a:hover {
     color: #389ed1;
 
     text-decoration: none;
-}
-
-.sort_time{
-    position: relative;
-    border-radius: 5px;
-    float: right;
-
-    color: #424060;
-    font-size: 20px;
-    height: 30px;
-}
-
-.sort_time.top{
-    width: 350px;
-
-    background-color: rgb(114, 114, 119);
-    
-    left: -10px;
-    top: 5px;
-
-    padding: 5px 10px;
 }
 
 /* 新按钮 */
@@ -194,16 +255,3 @@ a:hover {
     user-select: none;
 }
 
-
-/*彩蛋*/
-/* #video_joke{
-    position: relative;
-
-    top: -156px;
-    left: 160px;
-
-    margin-bottom: -160px;
-
-    height: 164px;
-    width: 292px;
-} */
