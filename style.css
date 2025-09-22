@@ -5,11 +5,11 @@
 .wallpaper {
     position: fixed;
 
-    top: -1vh;
-    left: -1vw;
+    top: -10px;
+    left: -10px;
 
-    height: 102vh;
-    width: 102vw;
+    height: calc(100vh + 20px);
+    width: calc(100vw + 20px);
 
     z-index: -1;
 
@@ -19,9 +19,10 @@
 
 /* 顶栏 */
 .top {
-    top: 10px;
+    top: 20px;
 }
 
+/* 左侧栏 */
 .left {
     left: 0;
     width: 25vw;
@@ -31,8 +32,8 @@
 
 /* 标题 */
 .topic {
-    height: 395px;
-    background-color: rgb(99, 99, 138);
+    height: 40vh;
+    background-color: rgba(235, 240, 240,0.75);
     
     overflow: hidden;
 
@@ -45,9 +46,13 @@
     height: 50px;
 }
 
+.topic hr {
+    margin: 0;
+}
+
 /* 日志 */
 .log {
-    background-color:rgb(234, 242, 244);
+    background-color:rgba(235, 239, 245, 0.8);
 
     white-space: pre-line;
 
@@ -55,10 +60,49 @@
     margin-left:0;
     padding: 10px;
 
-    height: 300px;
+    height: calc(40vh - 95px);
     overflow: auto;
 
     border-radius: 0px 10px 10px 0px / 0px 10px 10px 0px;
+}
+
+/* 工具栏 */
+.menu {
+    height: 50px;
+
+    margin-bottom: 10px;
+
+    font-size: 22px;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    background-color: rgba(235, 240, 240,0.75);
+
+    display: flex;
+    align-items:center;
+}
+
+.func {
+    flex: 10;
+
+    height: 42px;
+    padding-top: 8px;
+
+    border: 0px solid #3fbce6;
+
+    text-align: center;
+
+    transition: all 0.5s ease 0s;
+}
+
+.func:hover {
+    flex: 15;
+    border-bottom: 10px  solid #3fbce6;
+}
+
+.menu hr {
+    height: 0.6em;
 }
 
 /* 概况 */
@@ -68,7 +112,7 @@
 
     border-radius: 5px;
 
-    background-color: rgba(99, 99, 138,0.5);
+    background-color: rgba(91, 190, 255, 0.2);
 
     overflow: hidden;
 
@@ -84,7 +128,7 @@
 }
 
 .todo_number {
-    background-color: #cbcbcb;
+    background-color: #eefff8;
 
     font-size: 15px;
     float: left;
@@ -107,7 +151,7 @@ progress {
 
 /* 顶栏文本 */
 .top_text{
-    color: rgb(245, 222, 222);
+    color: rgb(122, 169, 236);
     font-size: 35px;
 
     left: 10px;
@@ -116,8 +160,8 @@ progress {
 .info{
     position: absolute;
 
-    left: 30vw;
-    width: 65vw;
+    left: calc(25vw + 20px);
+    width: calc(75vw - 40px);
 }
 
 .text * {
@@ -127,53 +171,49 @@ progress {
 /* 作业类 */
 .text {
     margin-bottom: 10px;
+    padding: 5px;
 
     font-size: 22px;
 
     border-radius: 8px;
     overflow: hidden;
 
-    background-color: rgba(145, 145, 145,0.5);
-    backdrop-filter: blur(10px);    
+    background-color: rgba(77, 86, 88, 0.2);
+    backdrop-filter: blur(5px);
 }
 
 .text * {
     user-select: text;
 }
 
-/* 工具栏 */
-.func {
-    margin-bottom: 10px;
-
-    font-size: 22px;
-
-    border-radius: 8px;
-    overflow: hidden;
-
-    background-color: rgb(99, 99, 138);
-}
-
 /* 类标题 */
 .text_title{
-    color:rgb(240, 248, 255);
-    background-color: rgb(66, 66, 66);
+    background-color: rgba(240, 248, 248, 0.3);
     padding: 5px;
     padding-left: 10px;
 
     font-size: 25px;
+    border-radius: 5px;
 }
 
 /* 类内容 */
 .text_info_each{
-    border-color: black;
-    
     padding: 3px 3px 3px 10px;
 
-    border-top: 1px solid;
+    /* border-top: 1px solid; */
 
     white-space: pre-line;
 
     overflow: hidden;
+}
+
+.text_info_each::before {
+    content: "";
+
+    width: 10px;
+    height: 10px;
+
+    background-color: #727d84;
 }
 
 /* 提示 */
