@@ -13,12 +13,17 @@ buttons_fold.forEach(element => {
 });
 
 
-// 时间显示
+// 时间显示,种数统计
 let now = new Date();
+
+let n_notice = 0;
+let n_warn = 0;
 
 let texts_dead_line = document.querySelectorAll('.deadline');
 
 texts_dead_line.forEach(element => {
+    if (!element.checkVisibility()) return;
+
     var dead_line = new Date();
 
     var re_time = /(?:(\d{1,4})\/)?(\d+)\/(\d{1,2})/;
@@ -49,15 +54,23 @@ texts_dead_line.forEach(element => {
 
 
         if (day_last > 3)
-        element.style.color = '#20db61';
-        
-        else if (day_last > 1)
-        element.style.color = '#ff8222';
-
-        else
-        element.style.color = '#ff3e0e';
+            element.style.color = '#20db61';
+        else if (day_last > 1) {
+            element.style.color = '#ff8222';
+            n_notice++;
+        }
+        else {
+            element.style.color = '#ff3e0e';
+            n_warn++;
+        }
     }
 })
+
+document.querySelector('#todo_number_notice').textContent = n_notice;
+document.querySelector('#todo_number_warn').textContent = n_warn;
+
+//种数统计
+document.querySelector('#todo_number_total').textContent = document.querySelectorAll('.text_info_each:not([hidden])').length;
 
 
 //展开(新按钮)
@@ -142,6 +155,5 @@ document.querySelectorAll('.formate').forEach(element => {
 let info_view_last = [document.querySelector('meta[name="version"]').getAttribute('content'),document.querySelector('meta[name="revised"]').getAttribute('content')].join('_');
 
 if (localStorage.getItem('view_last') != info_view_last) {
-    alert(document.querySelector('#notice').textContent.trim());
     localStorage.setItem('view_last',info_view_last);
 }

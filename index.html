@@ -2,7 +2,7 @@
 <html lang="cn-ch">
     <head>
         <title>作业汇总</title>
-        <meta name="version" content="v1.0_dev1">
+        <meta name="version" content="v1.0_dev2">
         <meta name="revised" content="2025-09-19">
 
         <meta name="author" content="World">
@@ -13,19 +13,23 @@
     </head>
     <body>
         <img class="wallpaper" src="wallpaper.jpg">
-        <div class="left">
-            <div class="top topic">
+        <div class="left top">
+            <div class="topic">
                 <div>
                     <span class="top_text">作业汇总</span>
-                    <span class="news_button">(按钮)</span>
+                    <span class="news_button"></span>
                 </div>
-                <div class="log">当前版本:<span class="formate">version</span>(开发版)
-                    最后次更新日期:<span class="formate">revised</span>
-
-                    内容更新(新->旧):
+                <hr>
+                <div class="log">内容更新(新->旧):
                     -开学内容,书单
+                    
+                    最后次更新日期:
+                    <span class="formate">revised</span>
+                    当前版本:
+                    <span class="formate">version</span>(开发版)
 
                     版本更新:
+                    -修复了部分界面异常,界面更新(菜单,配色),概况功能完成
                     -移除了大量废弃代码,界面全面更新(时间颜色对照图RIP),元素优化
 
                     消息框每次更新只会展开一次(还没做,但做了手动)
@@ -33,13 +37,21 @@
                 </div>
             </div>
 
-            <div class="overview"><span>概况</span><progress max="100" value="50"></progress></div>
-            <div class="overview"><span>概况</span><span class="todo_numbers"><span class="todo_number" title="不足1天" style="background-color: #ff8222">0</span><span class="todo_number" title="不足3天" style="background-color: #ff3e0e">0</span><span title="合计" class="todo_number">0</span></div></div>
+            <!-- <div class="overview"><span>概况</span><progress max="100" value="50"></progress></div> -->
+            <div class="overview"><span>概况</span>
+                <span class="todo_numbers">
+                    <span class="todo_number" title="不足3天" id="todo_number_notice" style="background-color: #ff8222">-1</span>
+                    <span class="todo_number" title="不足1天" id="todo_number_warn" style="background-color: #ff3e0e">-1</span>
+                    <span title="合计" class="todo_number" id="todo_number_total">-1</span></div></div>
         </div>
 
         <div class="top info">
-            <div class="func">
-                <span class="top_text">(工具栏)</span>
+            <div class="menu">
+                <span class="func">帮助</span><hr>
+                <!-- <span class="func"></span><hr> -->
+                <a class="func" href="https://developer.mozilla.org/zh-CN/docs/Learn_web_development">学习web</a><hr>
+                <span class="func">关于我<span style="text-decoration:line-through;">们</span></span><hr>
+                <span class="func"><span style="text-decoration:line-through;">赞助</span></span></span>
             </div>
 
             <div class="text">
