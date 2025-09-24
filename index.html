@@ -2,8 +2,9 @@
 <html lang="cn-ch">
     <head>
         <title>作业汇总</title>
-        <meta name="version" content="v1.0_dev2">
-        <meta name="revised" content="2025-09-24">
+
+        <meta name="version" content="v1.0_dev3">
+        <meta name="revised" content="2025-09-24>
 
         <meta name="author" content="World">
         <meta charset="utf-8">
@@ -13,7 +14,7 @@
     </head>
     <body>
         <img class="wallpaper" src="wallpaper.jpg">
-        <div class="left top">
+        <div class="left">
             <div class="topic">
                 <div>
                     <span class="top_text">作业汇总</span>
@@ -21,6 +22,7 @@
                 </div>
                 <hr>
                 <div class="log">内容更新(新->旧):
+
                     -开发阶段，暂无力维护该板块
                     
                     最后次更新日期:
@@ -29,6 +31,7 @@
                     <span class="formate">version</span>(开发版)
 
                     版本更新:
+                    -概况功能完成,简化配色,添加概况滚动条,移除了旧版彩蛋
                     -修复了部分界面异常,界面更新(菜单,配色),概况功能完成
                     -移除了大量废弃代码,界面全面更新(时间颜色对照图RIP),元素优化
 
@@ -43,9 +46,10 @@
                     <span class="todo_number" title="不足3天" id="todo_number_notice" style="background-color: #ff8222">-1</span>
                     <span class="todo_number" title="不足1天" id="todo_number_warn" style="background-color: #ff3e0e">-1</span>
                     <span title="合计" class="todo_number" id="todo_number_total">-1</span></div></div>
+                </span>
+            </div>
         </div>
-
-        <div class="top info">
+        <div class="info">
             <div class="menu">
                 <span class="func">帮助</span><hr>
                 <!-- <span class="func"></span><hr> -->
@@ -92,19 +96,22 @@
             </div>
 
             <div class="text">
-                <div class="text_title">第二课堂<span class="deadline">本学年</span></div>
+                <div class="text_title">第二课堂</div>
                 <div class="text_info">
-                    <div class="text_info_each">每学年须完成德16分，智8分，体8分，美8分，劳8分，方才合格，如不合格影响评奖评优和推优入党，甚至与毕业挂钩</div>
+                    <div class="text_info_each">每学年须完成德16分，智8分，体8分，美8分，劳8分，方才合格，如不合格影响评奖评优和推优入党，甚至与毕业挂钩<span class="deadline">本学年</span></div>
                 </div>
             </div>
 
             <div class="text">
-                <div class="text_title">步道乐跑<span class="deadline">本学期</span></div>
+
+                <div class="text_title">步道乐跑</div>
                 <div class="text_info">
-                    <div class="text_info_each">学期目标:55次<span class="notice">60%完成率才有分</span><span class="fold_dis">教训</span><span>长时间暂停(跑步总时长>1h),结束时间过晚均不计入次数</span></div>
+                    <div class="text_info_each">学期目标:55次<span class="deadline">本学期</span><span class="notice">60%完成率才有分</span><span class="fold_dis">教训</span><span>长时间暂停(跑步总时长>1h),结束时间过晚均不计入次数</span></div>
                 </div>
             </div>
         </div>
+        <div class="overview_bar"></div>
+
     </body>
     <head>
         <script src="script.js"></script>

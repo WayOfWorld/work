@@ -2,6 +2,20 @@
     user-select: none;
 }
 
+body {
+    --main-color: rgba(235, 240, 240,0.75);
+    --info-background-color: rgba(77, 86, 88, 0.2);
+    --info-title-color: rgba(240, 248, 248, 0.3);
+    
+    --theme-color:rgb(122, 169, 236);
+
+    display: flex;
+
+    height: 100vh;
+
+    margin: 0;
+}
+
 .wallpaper {
     position: fixed;
 
@@ -16,24 +30,18 @@
     filter: blur(3px);
 }
 
-
-/* 顶栏 */
-.top {
-    top: 20px;
-}
-
 /* 左侧栏 */
 .left {
-    left: 0;
-    width: 25vw;
+    margin-top: 20px;
+    margin-left: 0;
 
-    position: fixed;
+    flex: 20;
 }
 
 /* 标题 */
 .topic {
     height: 40vh;
-    background-color: rgba(235, 240, 240,0.75);
+    background-color: var(--main-color);
     
     overflow: hidden;
 
@@ -61,7 +69,7 @@
     padding: 10px;
 
     height: calc(40vh - 95px);
-    overflow: auto;
+    overflow-y: auto;
 
     border-radius: 0px 10px 10px 0px / 0px 10px 10px 0px;
 }
@@ -70,6 +78,7 @@
 .menu {
     height: 50px;
 
+    margin-top: 20px;
     margin-bottom: 10px;
 
     font-size: 22px;
@@ -77,7 +86,7 @@
     border-radius: 8px;
     overflow: hidden;
 
-    background-color: rgba(235, 240, 240,0.75);
+    background-color: var(--main-color);
 
     display: flex;
     align-items:center;
@@ -112,7 +121,7 @@
 
     border-radius: 5px;
 
-    background-color: rgba(91, 190, 255, 0.2);
+    background-color: var(--info-background-color);
 
     overflow: hidden;
 
@@ -128,7 +137,7 @@
 }
 
 .todo_number {
-    background-color: #eefff8;
+    background-color: var(--info-title-color);
 
     font-size: 15px;
     float: left;
@@ -141,6 +150,38 @@
     text-align: center;
 }
 
+/* 概况条 */
+.overview_bar {
+    margin: 20px 0;
+    margin-right: 5px;
+
+    border-radius: 8px;
+
+    flex: 0 1 5px;
+
+    background-color: var(--info-background-color);
+
+    overflow: hidden;
+    padding: 0 2px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.overview_bar * {
+    flex: 1;
+    background-color: var(--main-color);
+    margin-bottom: 2px;
+}
+.overview_bar *:last-child {
+    margin-bottom: 0;
+}
+
+.overview_bar *[selected] {
+    border-left: 2px solid var(--theme-color);
+    border-right: 2px solid var(--theme-color);
+}
+
 progress {
     float: right;
 
@@ -151,17 +192,25 @@ progress {
 
 /* 顶栏文本 */
 .top_text{
-    color: rgb(122, 169, 236);
+    color: var(--theme-color);
     font-size: 35px;
 
     left: 10px;
+
+    white-space: nowrap;
 }
 
 .info{
-    position: absolute;
+    padding-left: 15px;
+    padding-right: 5px;
 
-    left: calc(25vw + 20px);
-    width: calc(75vw - 40px);
+    overflow-y:auto;
+
+    flex: 60;
+}
+
+.info::-webkit-scrollbar {
+    display: none;
 }
 
 .text * {
@@ -178,7 +227,7 @@ progress {
     border-radius: 8px;
     overflow: hidden;
 
-    background-color: rgba(77, 86, 88, 0.2);
+    background-color: var(--info-background-color);
     backdrop-filter: blur(5px);
 }
 
@@ -188,7 +237,7 @@ progress {
 
 /* 类标题 */
 .text_title{
-    background-color: rgba(240, 248, 248, 0.3);
+    background-color: var(--info-title-color);
     padding: 5px;
     padding-left: 10px;
 
@@ -199,6 +248,9 @@ progress {
 /* 类内容 */
 .text_info_each{
     padding: 3px 3px 3px 10px;
+    margin: 8px 0;
+
+    border-left: 3px solid var(--main-color);
 
     /* border-top: 1px solid; */
 
@@ -208,7 +260,10 @@ progress {
 }
 
 .text_info_each::before {
-    content: "";
+    /* content: ""; */
+
+    position:absolute;
+
 
     width: 10px;
     height: 10px;
