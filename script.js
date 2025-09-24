@@ -12,7 +12,6 @@ buttons_fold.forEach(element => {
     });
 });
 
-
 // 时间显示,种数统计
 let now = new Date();
 
@@ -47,11 +46,6 @@ texts_dead_line.forEach(element => {
             element.textContent += '截止日';
         else if (day_last < 0)
             element.textContent += '已截止';
-        // else if (day_last === -1)
-        //     element.textContent += '已截止';
-        // else
-        //     element.parentElement.hidden = 1;
-
 
         if (day_last > 3)
             element.style.color = '#20db61';
@@ -69,8 +63,24 @@ texts_dead_line.forEach(element => {
 document.querySelector('#todo_number_notice').textContent = n_notice;
 document.querySelector('#todo_number_warn').textContent = n_warn;
 
+// 概况条
+let overview_bar = document.querySelector('.overview_bar');
+let text_infos = document.querySelectorAll('.text_info_each:not([hidden])');
+
+text_infos.forEach(element => {
+    let bar_part = document.createElement('div');
+    
+    let each_deadline = element.querySelector('.deadline');
+
+    if (each_deadline)
+        bar_part.style.backgroundColor = window.getComputedStyle(each_deadline).color;
+
+    overview_bar.appendChild(bar_part);
+})
+
 //种数统计
-document.querySelector('#todo_number_total').textContent = document.querySelectorAll('.text_info_each:not([hidden])').length;
+document.querySelector('#todo_number_total').textContent = text_infos.length;
+
 
 
 //展开(新按钮)
@@ -117,25 +127,6 @@ let a = document.querySelectorAll('a');
 a.forEach(element => {
     element.target = "_blank";
 })
-
-
-// 彩蛋
-let version = document.querySelector('.notice');
-let time_click_version = 0;
-
-version.addEventListener('click',event => {
-    ++time_click_version;
-    if (time_click_version === 5) {
-        document.body.innerHTML += `
-            <div class="text">
-                <div class="text_title">广告位招租${version.textContent}</div>
-                <div class="text_info">
-                <div class="text_info_each">这不是彩蛋</div>
-                </div>
-            </div>
-            `;
-    }
-});
 
 // 删除没有内容的作业
 document.querySelectorAll('.text').forEach(element => {
