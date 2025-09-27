@@ -4,7 +4,7 @@
 
 body {
     --main-color: rgba(235, 240, 240,0.75);
-    --info-background-color: rgba(77, 86, 88, 0.2);
+    --info-background-color: rgba(198, 206, 208, 0.4);
     --info-title-color: rgba(240, 248, 248, 0.3);
     
     --theme-color:rgb(122, 169, 236);
@@ -35,7 +35,7 @@ body {
     margin-top: 20px;
     margin-left: 0;
 
-    flex: 20;
+    flex: 20 30;
 }
 
 /* 标题 */
@@ -46,6 +46,8 @@ body {
     overflow: hidden;
 
     border-radius: 0px 10px 10px 0px / 0px 10px 10px 0px;
+
+    cursor:pointer;
 
     transition: all 0.5s ease 0s;
 }
@@ -69,29 +71,59 @@ body {
     padding: 10px;
 
     height: calc(40vh - 95px);
+
     overflow-y: auto;
+    overflow-x: hidden;
 
     border-radius: 0px 10px 10px 0px / 0px 10px 10px 0px;
 }
 
-/* 工具栏 */
-.menu {
-    height: 50px;
-
+/* 菜单栏主体 */
+.menu_info {
     margin-top: 20px;
     margin-bottom: 10px;
 
-    font-size: 22px;
-
     border-radius: 8px;
-    overflow: hidden;
 
     background-color: var(--main-color);
 
+    height: 50px;
+    overflow: hidden;
+
+    transition: all 0.5s ease 0s;
+}
+.menu_info[selected] {
+    height: 40vh;
+}
+.menu_info hr {
+    margin: 0;
+}
+
+/* 菜单展开正文 */
+.menu_info_each {
+    height: calc(40vh - 50px);
+
+    padding: 10px;
+    padding-bottom: 0;
+
+    overflow-y: auto;
+}
+.menu_info_each ol,ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* 菜单栏 */
+.menu {
+    height: 50px;
+    font-size: 22px;
+
+    overflow: hidden;
     display: flex;
     align-items:center;
 }
 
+/* 菜单项目 */
 .func {
     flex: 10;
 
@@ -105,9 +137,14 @@ body {
     transition: all 0.5s ease 0s;
 }
 
-.func:hover {
+.func:hover,.func[selected] {
     flex: 15;
-    border-bottom: 10px  solid #3fbce6;
+    border-bottom: 10px  solid var(--theme-color);
+
+    cursor:pointer;
+}
+.func[selected] {
+    border-bottom-width: 5px;
 }
 
 .menu hr {
@@ -115,7 +152,7 @@ body {
 }
 
 /* 概况 */
-.overview {
+.left_info {
     margin: 10px;
     padding: 5px;
 
@@ -137,7 +174,7 @@ body {
 }
 
 .todo_number {
-    background-color: var(--info-title-color);
+    background-color: var(--main-color);
 
     font-size: 15px;
     float: left;
@@ -148,6 +185,8 @@ body {
 
     margin: 1px 5px;
     text-align: center;
+
+    cursor: help;
 }
 
 /* 概况条 */
@@ -157,29 +196,37 @@ body {
 
     border-radius: 8px;
 
-    flex: 0 1 5px;
+    flex: 0 0 7px;
 
     background-color: var(--info-background-color);
 
     overflow: hidden;
-    padding: 0 2px;
+    /* padding: 0 2px; */
     
     display: flex;
     flex-direction: column;
 }
 
+/* 总览条单元 */
 .overview_bar * {
     flex: 1;
     background-color: var(--main-color);
+    
+    margin-left: 1px;
+    margin-right: 1px;
+
     margin-bottom: 2px;
+
+    transition: all 0.1s ease 0s;
 }
 .overview_bar *:last-child {
     margin-bottom: 0;
 }
-
 .overview_bar *[selected] {
-    border-left: 2px solid var(--theme-color);
-    border-right: 2px solid var(--theme-color);
+    /* border-left: 2px solid var(--theme-color); */
+    /* border-right: 2px solid var(--theme-color); */
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 progress {
@@ -206,7 +253,7 @@ progress {
 
     overflow-y:auto;
 
-    flex: 60;
+    flex: 80 70;
 }
 
 .info::-webkit-scrollbar {
@@ -259,18 +306,6 @@ progress {
     overflow: hidden;
 }
 
-.text_info_each::before {
-    /* content: ""; */
-
-    position:absolute;
-
-
-    width: 10px;
-    height: 10px;
-
-    background-color: #727d84;
-}
-
 /* 提示 */
 .notice{
     float:right;
@@ -279,17 +314,16 @@ progress {
 }
 
 /* 截止 */
-.deadline{
+.deadline {
     float: right;
     color: #3fbce6;
     /*color: #20db61;*/
     white-space: nowrap;
 
-    background-color: rgb(114, 114, 119);
+    background-color: rgb(146, 153, 156);
     border-radius: 5px;
     font-size: 0.85em;
     padding: 0.15em;
-    margin-bottom: -0.05em;
 }
 
 /* 重要 */
@@ -328,7 +362,7 @@ a:hover {
 }
 
 .fold_dis[unfold='1']{
-    background-color: #727d84;
+    background-color: #c6dcf4;
 
     margin-right: 10px;
     margin-bottom: 5px;
@@ -342,11 +376,9 @@ a:hover {
 }
 
 .fold_dis:hover{
-    background-color: #95a5aa;
-
+    background-color: #b4c8cf;
 }
 
 .fold_dis[unfold='0']{
     user-select: none;
 }
-

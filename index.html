@@ -2,8 +2,8 @@
 <html lang="cn-ch">
     <head>
         <title>作业汇总</title>
-        <meta name="version" content="v1.0_dev3">
-        <meta name="revised" content="2025-09-23">
+        <meta name="version" content="v1.0">
+        <meta name="revised" content="2025-09-27">
 
         <meta name="author" content="World">
         <meta charset="utf-8">
@@ -21,54 +21,100 @@
                 </div>
                 <hr>
                 <div class="log">内容更新(新->旧):
-                    -开发阶段，暂无力维护
+                    -正式版,恢复记录
                     
                     最后次更新日期:
                     <span class="formate">revised</span>
                     当前版本:
-                    <span class="formate">version</span>(开发版)
+                    <span class="formate">version</span>
 
                     版本更新:
+                    -实时滚动条选中效果,菜单功能及内容完成,添加了彩蛋
                     -概况功能完成,简化配色,添加概况滚动条,移除了旧版彩蛋
                     -修复了部分界面异常,界面更新(菜单,配色),概况功能完成
                     -移除了大量废弃代码,界面全面更新(时间颜色对照图RIP),元素优化
-
-                    消息框每次更新只会展开一次(还没做,但做了手动)
-                    (累了,先更一些,后面再补功能和设计)
+                </div>
+            </div>
+            <div class="left_info"><span>概况</span>
+                <div class="todo_numbers">
+                    <span class="todo_number" title="不足3天" id="todo_number_notice" style="background-color: #ff8222">-1</span>
+                    <span class="todo_number" title="不足1天" id="todo_number_warn" style="background-color: #ff3e0e">-1</span>
+                    <span title="合计" class="todo_number" id="todo_number_total">-1</span>
                 </div>
             </div>
 
-            <!-- <div class="overview"><span>概况</span><progress max="100" value="50"></progress></div> -->
-            <div class="overview"><span>概况</span>
-                <span class="todo_numbers">
-                    <span class="todo_number" title="不足3天" id="todo_number_notice" style="background-color: #ff8222">-1</span>
-                    <span class="todo_number" title="不足1天" id="todo_number_warn" style="background-color: #ff3e0e">-1</span>
-                    <span title="合计" class="todo_number" id="todo_number_total">-1</span></div></div>
-                </span>
+            <div class="left_info">
+                横屏获得更好体验
             </div>
         </div>
         <div class="info">
-            <div class="menu">
-                <span class="func">帮助</span><hr>
-                <!-- <span class="func"></span><hr> -->
-                <a class="func" href="https://developer.mozilla.org/zh-CN/docs/Learn_web_development">学习web</a><hr>
-                <span class="func">关于我<span style="text-decoration:line-through;">们</span></span><hr>
-                <span class="func"><span style="text-decoration:line-through;">赞助</span></span></span>
+            <div class="menu_info">
+                <div class="menu">
+                    <span class="func" link="help">帮助</span><hr>
+                    <!-- <span class="func"></span><hr> -->
+                    <a class="func" href="https://developer.mozilla.org/zh-CN/docs/Learn_web_development">学习web</a><hr>
+                    <span class="func" link="about">关于</span><hr>
+                    <span class="func" link="egg">赞助</span>
+                </div>
+                <hr>
+                <div class="menu_info_each" id="help">
+                    <ol>
+                        <li>"作业汇总"可被点击以收起(虽然没什么用)</li>
+                        <li>概况会统计所有作业截止情况(鼠标悬停可查看对应含义依次为:不足3天,不足1天,合计)</li>
+                        <li>左下角也许会有通知</li>
+                        <li>正文按钮单击展开,双击关闭(方便复制)</li>
+                        <li>v1.0起仅作业列能滑动(无法通过左侧滑动作业列)</li>
+                        <li>右侧其实是实时更新的滚动条,颜色与截至时间对应,否则为白色(目前没做点击互动)</li>
+                        <li>再次点击"帮助"可以关闭此页面</li>
+                    </ol>
+                </div>
+
+                <div style="white-space: pre-line;" class="menu_info_each" id="about">关于我<del>们</del>
+                    作者: World
+                    源码: <a href="https://github.com/WayOfWorld/work">github</a>
+                </div>
+
+                <div class="menu_info_each" id="egg" style="display: flex;">
+                    <div style="flex: 0 0; aspect-ratio: 16/9; padding: 0; height: 90%;" id="egg_loc"></div>
+                    <div style="flex: 1; overflow-y: scroll;">
+                        <div style="height: 325px;">
+                            你被骗了
+                            <br><br>
+                            这是无偿的,是学习web的副产物<br>
+                            <del>当然你知道我是谁,也可以直接打钱</del>
+                            <br><br>
+                            左边视频是动态加载的,你不点开赞助不会加载,收起后会被卸载。另外这里没有彩蛋。
+                        </div>
+                        我藏这么深居然被你发现了
+                        <br><br>
+                        <del>画饼</del>更新计划顺便放这(有些本来是v1.0内容,但<del>累了</del>完成度够了):
+                        <ul>
+                            <li>优化菜单栏展开内容</li>
+                            <li>更改按钮,截止时间(添加进度条)样式</li>
+                            <li>丰富左侧栏</li>
+                            <li>滚动条点击互动</li>
+                            <li>配色优化(深色调)</li>
+                            <li>竖屏优化</li>
+                            <li>作业自定义,拖动(这个太麻烦了)</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="text">
-                <div class="text_title">英语(暂不清楚)</div>
+                <div class="text_title">英语</div>
                 <div class="text_info">
-                    <div class="text_info_each">FIF_一单元朗读<span class="deadline">10/7</span></div>
+                    <div class="text_info_each">课本_阅读Unit2<span class="deadline">10/7</span></div>
                     <div class="text_info_each">阅读教程3_单元2</div>
-                    <div class="text_info_each">背单词</div>
+                    <div class="text_info_each">U校园AI版_p16汉译英(在UAI上unit 1 Section A 1-5 Translation里完成)</div>
+                    <div class="text_info_each">记unit 1 A，B课后单词词组<span class="deadline">下次上课</span></div>
                 </div>
             </div>
             
             <div class="text">
                 <div class="text_title">数据结构</div>
                 <div class="text_info">
-                    <div class="text_info_each">写一个用于寻找(>1000,0000)质数的程序,尽可能高效率</div>
+                    <div class="text_info_each">课本_p94_11-20题(1-10选做)<span class="deadline">不交?</span></div>
                 </div>
             </div>
 
