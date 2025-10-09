@@ -1,17 +1,3 @@
-// 按钮
-let buttons_fold = document.querySelectorAll('.button_hidden');
-
-buttons_fold.forEach(element => {
-    element.addEventListener('click',event => {
-        let target = event.target.nextElementSibling;
-        
-        if (target.hidden)
-            target.hidden = 0;
-        else
-            target.hidden = 1;
-    });
-});
-
 // 时间显示,种数统计
 let now = new Date();
 
@@ -133,10 +119,11 @@ let fold_log = document.querySelector('.news_button');
 let topic = document.querySelector('.topic');
 
 topic.addEventListener('click',event => {
-    if (topic.getAttribute('fold') == null)
-        topic.setAttribute('fold','');
-    else
-        topic.removeAttribute('fold');
+    if (event.target.className != "fold_dis")
+        if (topic.getAttribute('fold') == null)
+            topic.setAttribute('fold','');
+        else
+            topic.removeAttribute('fold');
 });
 
 // 优化链接
@@ -175,6 +162,9 @@ let menu_selected;
 
 let egg_loc = document.querySelector('#egg_loc');
 let egg_html = '<iframe style="width: 100%; height: 100%;" src="//player.bilibili.com/player.html?isOutside=true&aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&p=1&danmaku=0&autoplay=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="false"></iframe>'
+
+if (window.innerHeight > window.innerWidth)
+    egg_loc.hidden = true;
 
 function menu_select(id) {
     menu_info.querySelectorAll('.menu_info_each').forEach(element => element.hidden = true);
