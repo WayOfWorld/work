@@ -4,7 +4,7 @@
 
 body {
     --main-color: rgba(235, 240, 240,0.75);
-    --info-background-color: rgba(198, 206, 208, 0.4);
+    --info-background-color: rgba(198, 206, 208, 0.5);
     --info-title-color: rgba(240, 248, 248, 0.3);
     
     --theme-color:rgb(122, 169, 236);
@@ -275,7 +275,7 @@ progress {
     overflow: hidden;
 
     background-color: var(--info-background-color);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(20px);
 }
 
 .text * {
