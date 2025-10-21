@@ -9,11 +9,13 @@ body {
     
     --theme-color:rgb(122, 169, 236);
 
+    margin: 0;
+}
+
+#main {
     display: flex;
 
     height: 100vh;
-
-    margin: 0;
 }
 
 .wallpaper {
@@ -381,4 +383,13 @@ a:hover {
 
 .fold_dis[unfold='0']{
     user-select: none;
+}
+
+/* 网站信息 */
+#web_info {
+    padding: 8px;
+
+    background-color: var(--main-color);
+
+    text-align: center;
 }

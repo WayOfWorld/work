@@ -3,10 +3,10 @@
     <head>
         <title>作业汇总</title>
 
-        <meta name="description" content="用于记录班级作业的无偿页面,你或许能通过源码学到一些前端知识,但不建议。诞生于2024年9月,几乎是初学者项目,而且是一个历史包袱极重的项目">
+        <meta name="description" content="用于记录班级作业的无偿页面,你或许能通过源码学到一些前端知识,但不建议。诞生于2024年9月29日,几乎是初学者项目,而且是一个历史包袱极重的项目">
 
-        <meta name="version" content="v1.0.2">
-        <meta name="revised" content="2025-10-17">
+        <meta name="version" content="v1.1">
+        <meta name="revised" content="2025-10-21">
 
         <meta name="author" content="World">
         <meta charset="utf-8">
@@ -15,236 +15,253 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <img class="wallpaper" src="wallpaper.jpg">
-        <div class="left">
-            <div class="topic">
-                <div>
-                    <span class="top_text">作业汇总</span>
-                    <span class="news_button"></span>
+        <div id="main">
+            <img class="wallpaper" src="wallpaper.jpg">
+            <div class="left">
+                <div class="topic">
+                    <div>
+                        <span class="top_text">作业汇总</span>
+                        <span class="news_button"></span>
+                    </div>
+                    <hr>
+                    <div class="log">内容更新(新->旧):
+                        -无
+                        -python,修复了链接,物理实验
+                        -英语,物理
+                        
+                        最后次更新日期:
+                        <span class="formate">revised</span>
+                        当前版本:
+                        <span class="formate">version</span>
+
+                        版本更新:
+                        v1.1
+                        -结构改变,准备迁移
+                        v1.0.2
+                        -略微降低了作业背景不透明度,提高了模糊效果
+                        v1.0.1
+                        -移除了旧按钮代码,版本更新记录数改为3且会收起部分,移除了竖屏的彩蛋视频,细微的界面调整
+                        <div class="fold_dis">v1.0</div><span>-实时滚动条选中效果,菜单功能及内容完成,添加了彩蛋
+                        -概况功能完成,简化配色,添加概况滚动条,移除了旧版彩蛋
+                        -修复了部分界面异常,界面更新(菜单,配色),概况功能完成
+                        -移除了大量废弃代码,界面全面更新(时间颜色对照图RIP),元素优化</span></div>
                 </div>
-                <hr>
-                <div class="log">内容更新(新->旧):
-                    -python,修复了链接,物理实验
-                    -英语,物理
-                    -前端,英语,数据结构
-                    
-                    最后次更新日期:
-                    <span class="formate">revised</span>
-                    当前版本:
-                    <span class="formate">version</span>
-
-                    版本更新:
-                    v1.0.2
-                    -略微降低了作业背景不透明度,提高了模糊效果
-                    v1.0.1
-                    -移除了旧按钮代码,版本更新记录数改为3且会收起部分,移除了竖屏的彩蛋视频,细微的界面调整
-                    <div class="fold_dis">v1.0</div><span>-实时滚动条选中效果,菜单功能及内容完成,添加了彩蛋
-                    -概况功能完成,简化配色,添加概况滚动条,移除了旧版彩蛋
-                    -修复了部分界面异常,界面更新(菜单,配色),概况功能完成
-                    -移除了大量废弃代码,界面全面更新(时间颜色对照图RIP),元素优化</span></div>
-            </div>
-            <div class="left_info"><span>概况</span>
-                <div class="todo_numbers">
-                    <span class="todo_number" title="不足3天" id="todo_number_notice" style="background-color: #ff8222">-1</span>
-                    <span class="todo_number" title="不足1天" id="todo_number_warn" style="background-color: #ff3e0e">-1</span>
-                    <span title="合计" class="todo_number" id="todo_number_total">-1</span>
-                </div>
-            </div>
-
-            <div class="left_info">
-                横屏获得更好体验
-            </div>
-
-            <div class="left_info">
-                <a href="https://i.chaoxing.com/">学习通链接</a>
-            </div>
-
-            <div class="left_info">
-                <a href="https://syxk.cqut.edu.cn">物理选课链接</a>
-            </div>
-
-            <div class="left_info">
-                <a href="https://www.pigai.org">批改网链接</a>
-            </div>
-
-            <div class="left_info">怎么这么多:(</div>
-            
-        </div>
-        <div class="info">
-            <div class="menu_info">
-                <div class="menu">
-                    <span class="func" link="help">帮助</span><hr>
-                    <a class="func" href="https://developer.mozilla.org/zh-CN/docs/Learn_web_development">学习</a><hr>
-                    <span class="func" link="about">关于</span><hr>
-                    <span class="func" link="egg">赞助</span>
-                </div>
-                <hr>
-                <div class="menu_info_each" id="help">
-                    <ol>
-                        <li>"作业汇总"可被点击以收起(虽然没什么用)</li>
-                        <li>概况会统计所有作业截止情况(鼠标悬停可查看对应含义依次为:不足3天,不足1天,合计)</li>
-                        <li>左下角也许会有通知</li>
-                        <li>正文按钮单击展开,双击关闭(方便复制)</li>
-                        <li>v1.0起仅作业列能滑动(无法通过左侧滑动作业列)</li>
-                        <li>右侧其实是实时更新的滚动条,颜色与截至时间对应,否则为白色(目前没做点击互动)</li>
-                        <li>再次点击"帮助"可以关闭此页面</li>
-                    </ol>
+                <div class="left_info"><span>概况</span>
+                    <div class="todo_numbers">
+                        <span class="todo_number" title="不足3天" id="todo_number_notice" style="background-color: #ff8222">-1</span>
+                        <span class="todo_number" title="不足1天" id="todo_number_warn" style="background-color: #ff3e0e">-1</span>
+                        <span title="合计" class="todo_number" id="todo_number_total">-1</span>
+                    </div>
                 </div>
 
-                <div style="white-space: pre-line;" class="menu_info_each" id="about">关于我<del>们</del>
-                    作者: World
-                    源码: <a href="https://github.com/WayOfWorld/work">github</a>
+                <div class="left_info">
+                    横屏获得更好体验
                 </div>
 
-                <div class="menu_info_each" id="egg" style="display: flex;">
-                    <div style="flex: 0 0; aspect-ratio: 16/9; padding: 0; height: 90%;" id="egg_loc"></div>
-                    <div style="flex: 1; overflow-y: scroll;">
-                        <div style="height: 325px;">
-                            你被骗了
+                <div class="left_info">
+                    <a href="https://i.chaoxing.com/">学习通链接</a>
+                </div>
+
+                <div class="left_info">
+                    <a href="https://syxk.cqut.edu.cn">物理选课链接</a>
+                </div>
+
+                <div class="left_info">
+                    <a href="https://www.pigai.org">批改网链接</a>
+                </div>
+                
+                <div class="left_info">
+                    <a href="https://WayOfWorld.cn">释放金丝雀</a>
+                </div>
+
+                <div class="left_info">怎么这么多:(</div>
+                
+            </div>
+            <div class="info">
+                <div class="menu_info">
+                    <div class="menu">
+                        <span class="func" link="help">帮助</span><hr>
+                        <a class="func" href="https://developer.mozilla.org/zh-CN/docs/Learn_web_development">学习</a><hr>
+                        <span class="func" link="about">关于</span><hr>
+                        <span class="func" link="egg">赞助</span>
+                    </div>
+                    <hr>
+                    <div class="menu_info_each" id="help">
+                        <ol>
+                            <li>"作业汇总"可被点击以收起(虽然没什么用)</li>
+                            <li>概况会统计所有作业截止情况(鼠标悬停可查看对应含义依次为:不足3天,不足1天,合计)</li>
+                            <li>左下角也许会有通知</li>
+                            <li>正文按钮单击展开,双击关闭(方便复制)</li>
+                            <li>v1.0起仅作业列能滑动(无法通过左侧滑动作业列)</li>
+                            <li>右侧其实是实时更新的滚动条,颜色与截至时间对应,否则为白色(目前没做点击互动)</li>
+                            <li>再次点击"帮助"可以关闭此页面</li>
+                        </ol>
+                    </div>
+
+                    <div style="white-space: pre-line;" class="menu_info_each" id="about">关于我<del>们</del>
+                        作者: World
+
+                        前端:World
+                        内容维护:World
+
+                        源码: <a href="https://github.com/WayOfWorld/work">github</a>
+
+                        始于2024年9月29日
+                    </div>
+
+                    <div class="menu_info_each" id="egg" style="display: flex;">
+                        <div style="flex: 0 0; aspect-ratio: 16/9; padding: 0; height: 90%;" id="egg_loc"></div>
+                        <div style="flex: 1; overflow-y: scroll;">
+                            <div style="height: 325px;">
+                                你被骗了
+                                <br><br>
+                                这是无偿的,是学习web的副产物<br>
+                                <del>当然你知道我是谁,也可以直接打钱</del>
+                                <br><br>
+                                左边视频是动态加载的,你不点开赞助不会加载,收起后会被卸载。另外这里没有彩蛋。
+                            </div>
+                            我藏这么深居然被你发现了
                             <br><br>
-                            这是无偿的,是学习web的副产物<br>
-                            <del>当然你知道我是谁,也可以直接打钱</del>
-                            <br><br>
-                            左边视频是动态加载的,你不点开赞助不会加载,收起后会被卸载。另外这里没有彩蛋。
+                            <del>画饼</del>更新计划顺便放这(有些本来是v1.0内容,但<del>累了</del>完成度够了):
+                            <ul>
+                                <li>优化菜单栏展开内容</li>
+                                <li>更改按钮,截止时间(添加进度条)样式</li>
+                                <li>丰富左侧栏</li>
+                                <li>滚动条点击互动</li>
+                                <li>配色优化(深色调)</li>
+                                <li>竖屏优化</li>
+                                <li>作业自定义,拖动(这个太麻烦了)</li>
+                            </ul>
                         </div>
-                        我藏这么深居然被你发现了
-                        <br><br>
-                        <del>画饼</del>更新计划顺便放这(有些本来是v1.0内容,但<del>累了</del>完成度够了):
-                        <ul>
-                            <li>优化菜单栏展开内容</li>
-                            <li>更改按钮,截止时间(添加进度条)样式</li>
-                            <li>丰富左侧栏</li>
-                            <li>滚动条点击互动</li>
-                            <li>配色优化(深色调)</li>
-                            <li>竖屏优化</li>
-                            <li>作业自定义,拖动(这个太麻烦了)</li>
-                        </ul>
+                    </div>
+                </div>
+
+                <div class="text">
+                    <div class="text_title">英语</div>
+                    <div class="text_info">
+                        <div class="text_info_each">阅读教程3_单元3</div>
+                        <div class="text_info_each">fif_单元2<span class="deadline">10/26</span></div>
+                        <div class="text_info_each">批改网_作文<span class="deadline">10/25</span></div>
+                        <div class="text_info_each">预习Unit2_textA,完成p38第一题</div>
+                        
+                    </div>
+                </div>
+                
+                <div class="text">
+                    <div class="text_title">数据结构</div>
+                    <div class="text_info">
+                        <div class="text_info_each">课堂派_有图<span class="fold_dis">提交格式</span><span>数据结构作业以word文档形式提交，附上运行结果截图，代码可以复制或者截图</span><span class="deadline">10/23</span></div>
+                    </div>
+                </div>
+
+                <div class="text">
+                    <div class="text_title">前端</div>
+                    <div class="text_info">
+                        <div class="text_info_each">实验一<a href="https://pan.baidu.com/s/1wb99MhqjBu0lpwQ-kNQT2A">网盘</a><span class="deadline">10/22抽查</span></div>
+                    </div>
+                </div>
+
+                <div class="text" hidden>
+                    <div class="text_title">Python</div>
+                    <div class="text_info">
+                        <div class="text_info_each">课堂派_上机实验01<span class="deadline">10/19_23:17</span></div>
+                        <div class="text_info_each">课堂派_课外作业02<span class="deadline">10/18_23:57</span></div>
+                    </div>
+                </div>
+
+                <div class="text">
+                    <div class="text_title">物理</div>
+                    <div class="text_info">
+                        <div class="text_info_each">学习通_线上课视频<span class="deadline">10/21</span></div>
+                        <div class="text_info_each">学习通_作业_2项<span class="deadline">10/26</span></div>
+                        <div class="text_info_each">习题册_真空中的静电场_练习一,练习二</div>
+                        <div class="text_info_each">学习通_线上讨论</div>
+                        <div class="text_info_each"><span class="fold_dis">作业通知原文</span><span>本周线上课学习内容如下：
+    在第8周线下课前学习下面的必看视频和教材相关部分，按时完成线上作业，开始书写习题册《真空中的静电场》的练习一和练习二，并完成线上讨论。
+
+    必看视频：
+    2.4、导体的静电平衡
+    2.5、导体的静电平衡（补充）
+    2.6、电介质的极化
+
+    线上作业：2.6 环路定理和电势（10月26日晚上12点前完成）
+    纸质作业：习题册《真空中的静电场》的练习一和练习二
+
+    线上讨论：电势零点的定义
+    请思考：为什么有限大小的带电梯可以取无穷远处作为电势零点，而无限长的带电直线取无穷远处作为电势零点会导致结果无意义？
+
+    以下视频供大家复习选看（非线上任务点，不作强制要求）：
+    1.4、（lpk)电场力做功，电势能，电势</span></div>
+                    </div>
+                </div>
+
+                <div class="text">
+                    <div class="text_title">社会主义发展史<a href="https://pan.baidu.com/s/1Xvcc0OU-IjT_u_CWoECPrA">网盘</a></div>
+                    <div class="text_info">
+                        <div class="text_info_each">小组作业</div>
+                        <div class="text_info_each">结课作业_心得体会<span class="deadline">11/4</span></div>
+                    </div>
+                </div>
+
+                <div class="text">
+                    <div class="text_title">中国近代史纲要<a href=" https://pan.baidu.com/s/1cyfqLLc5rsIWhXz34KUjcQ">网盘</a></div>
+                    <div class="text_info">
+                        <div class="text_info_each">小组作业</div>
+                        <div class="text_info_each">实践报告<span class="deadline">10周~11/10</span></div>
+                        <div class="text_info_each">理论报告(主题红岩相关)<span class="deadline">14周~12/8</span></div>
+                    </div>
+                </div>
+
+                <div class="text">
+                    <div class="text_title">创业</div>
+                    <div class="text_info">
+                        <div class="text_info_each">学习通_视频课<span class="notice">占20分</span></div>
+                        <div class="text_info_each">学习通_参与分组(新),完成作业<span class="fold_dis">详情</span><span>指定组长,由组长在学习通上提交本组路演的ＰＰＴ</span></div>
+                    </div>
+                </div>
+
+                <div class="text">
+                    <div class="text_title">大学生职业生涯规划与就业指导<a href="https://pan.baidu.com/s/1GLRWL3_KInHonHfNqCeL_Q">网盘</a></div>
+                    <div class="text_info">
+                        <div class="text_info_each">个人的职业规划书：字数要求不少于3000字，格式为宋体四号字，1.5倍行距，双面打印。要有封面。<span class="deadline">10/30</span></div>
+                    </div>
+                </div>
+
+                <div class="text">
+                    <div class="text_title">学习通</div>
+                    <div class="text_info">
+                        <div class="text_info_each">你选的课<a href="https://i.chaoxing.com/">网站</a><span class="deadline">12/1</span></div>
+                    </div>
+                </div>
+            
+                <div class="text">
+                    <div class="text_title">物理实验</div>
+                    <div class="text_info">
+                        <div class="text_info_each">你选的课<a href="https://syxk.cqut.edu.cn">网站</a></div>
+                    </div>
+                </div>
+
+                <div class="text">
+                    <div class="text_title">第二课堂</div>
+                    <div class="text_info">
+                        <div class="text_info_each">每学年须完成德16分，智8分，体8分，美8分，劳8分，方才合格，如不合格影响评奖评优和推优入党，甚至与毕业挂钩<span class="deadline">本学年</span></div>
+                    </div>
+                </div>
+
+                <div class="text">
+                    <div class="text_title">步道乐跑</div>
+                    <div class="text_info">
+                        <div class="text_info_each">学期目标:55次<span class="deadline">本学期</span><span class="notice">60%完成率才有分</span><span class="fold_dis">教训</span><span>长时间暂停(跑步总时长>1h),结束时间过晚均不计入次数</span></div>
                     </div>
                 </div>
             </div>
-
-            <div class="text">
-                <div class="text_title">英语</div>
-                <div class="text_info">
-                    <div class="text_info_each">阅读教程3_单元3</div>
-                    <div class="text_info_each">fif_单元2<span class="deadline">10/26</span></div>
-                    <div class="text_info_each">批改网_作文<span class="deadline">10/25</span></div>
-                    <div class="text_info_each">预习Unit2_textA,完成p38第一题</div>
-                    
-                </div>
-            </div>
-            
-            <div class="text">
-                <div class="text_title">数据结构</div>
-                <div class="text_info">
-                    <div class="text_info_each">课堂派_有图<span class="fold_dis">提交格式</span><span>数据结构作业以word文档形式提交，附上运行结果截图，代码可以复制或者截图</span><span class="deadline">10/23</span></div>
-                </div>
-            </div>
-
-            <div class="text">
-                <div class="text_title">前端</div>
-                <div class="text_info">
-                    <div class="text_info_each">实验一<a href="https://pan.baidu.com/s/1wb99MhqjBu0lpwQ-kNQT2A">网盘</a><span class="deadline">10/22抽查</span></div>
-                </div>
-            </div>
-
-            <div class="text">
-                <div class="text_title">Python</div>
-                <div class="text_info">
-                    <div class="text_info_each">课堂派_上机实验01<span class="deadline">10/19_23:17</span></div>
-                    <div class="text_info_each">课堂派_课外作业02<span class="deadline">10/18_23:57</span></div>
-                </div>
-            </div>
-
-            <div class="text">
-                <div class="text_title">物理</div>
-                <div class="text_info">
-                    <div class="text_info_each">学习通_线上课视频<span class="deadline">10/21</span></div>
-                    <div class="text_info_each">学习通_作业_2项<span class="deadline">10/26</span></div>
-                    <div class="text_info_each">习题册_真空中的静电场_练习一,练习二</div>
-                    <div class="text_info_each">学习通_线上讨论</div>
-                    <div class="text_info_each"><span class="fold_dis">作业通知原文</span><span>本周线上课学习内容如下：
-在第8周线下课前学习下面的必看视频和教材相关部分，按时完成线上作业，开始书写习题册《真空中的静电场》的练习一和练习二，并完成线上讨论。
-
-必看视频：
-2.4、导体的静电平衡
-2.5、导体的静电平衡（补充）
-2.6、电介质的极化
-
-线上作业：2.6 环路定理和电势（10月26日晚上12点前完成）
-纸质作业：习题册《真空中的静电场》的练习一和练习二
-
-线上讨论：电势零点的定义
-请思考：为什么有限大小的带电梯可以取无穷远处作为电势零点，而无限长的带电直线取无穷远处作为电势零点会导致结果无意义？
-
-以下视频供大家复习选看（非线上任务点，不作强制要求）：
-1.4、（lpk)电场力做功，电势能，电势</span></div>
-                </div>
-            </div>
-
-            <div class="text">
-                <div class="text_title">社会主义发展史<a href="https://pan.baidu.com/s/1Xvcc0OU-IjT_u_CWoECPrA">网盘</a></div>
-                <div class="text_info">
-                    <div class="text_info_each">小组作业</div>
-                    <div class="text_info_each">结课作业_心得体会<span class="deadline">11/4</span></div>
-                </div>
-            </div>
-
-            <div class="text">
-                <div class="text_title">中国近代史纲要<a href=" https://pan.baidu.com/s/1cyfqLLc5rsIWhXz34KUjcQ">网盘</a></div>
-                <div class="text_info">
-                    <div class="text_info_each">小组作业</div>
-                    <div class="text_info_each">实践报告<span class="deadline">10周~11/10</span></div>
-                    <div class="text_info_each">理论报告(主题红岩相关)<span class="deadline">14周~12/8</span></div>
-                </div>
-            </div>
-
-            <div class="text">
-                <div class="text_title">创业</div>
-                <div class="text_info">
-                    <div class="text_info_each">学习通_视频课<span class="notice">占20分</span></div>
-                    <div class="text_info_each">学习通_作业_徐海波农业创业案例<span class="deadline">10/20_8:30</span><span class="notice">无法复制</span></div>
-                    <div class="text_info_each">学习通_参与分组(新),完成作业<span class="fold_dis">详情</span><span>指定组长,由组长在学习通上提交本组路演的ＰＰＴ</span></div>
-                    <div class="text_info_each">学习通_作业_丫米厨房<span class="deadline">10/20_8:30</span><span class="notice">无法复制</span></div>
-                </div>
-            </div>
-
-            <div class="text">
-                <div class="text_title">大学生职业生涯规划与就业指导<a href="https://pan.baidu.com/s/1GLRWL3_KInHonHfNqCeL_Q">网盘</a></div>
-                <div class="text_info">
-                    <div class="text_info_each">个人的职业规划书：字数要求不少于3000字，格式为宋体四号字，1.5倍行距，双面打印。要有封面。<span class="deadline">10/30</span></div>
-                </div>
-            </div>
-
-            <div class="text">
-                <div class="text_title">学习通</div>
-                <div class="text_info">
-                    <div class="text_info_each">你选的课<a href="https://i.chaoxing.com/">网站</a><span class="deadline">12/1</span></div>
-                </div>
-            </div>
-        
-            <div class="text">
-                <div class="text_title">物理实验</div>
-                <div class="text_info">
-                    <div class="text_info_each">你选的课<a href="https://syxk.cqut.edu.cn">网站</a></div>
-                </div>
-            </div>
-
-            <div class="text">
-                <div class="text_title">第二课堂</div>
-                <div class="text_info">
-                    <div class="text_info_each">每学年须完成德16分，智8分，体8分，美8分，劳8分，方才合格，如不合格影响评奖评优和推优入党，甚至与毕业挂钩<span class="deadline">本学年</span></div>
-                </div>
-            </div>
-
-            <div class="text">
-                <div class="text_title">步道乐跑</div>
-                <div class="text_info">
-                    <div class="text_info_each">学期目标:55次<span class="deadline">本学期</span><span class="notice">60%完成率才有分</span><span class="fold_dis">教训</span><span>长时间暂停(跑步总时长>1h),结束时间过晚均不计入次数</span></div>
-                </div>
-            </div>
+            <div class="overview_bar"></div>
         </div>
-        <div class="overview_bar"></div>
+
+        <!-- 备用 -->
+        <div id="web_info" hidden>
+            <div>ICP备案号:<a href="https://beian.miit.gov.cn">渝ICP备2025071480号</a></div>
+        </div>
     </body>
     <head>
         <script src="script.js"></script>
